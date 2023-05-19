@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mi sitio de películas</title>
+	<style>
+		body {
+			background-color: #f2f2f2;
+			font-family: Arial, sans-serif;
+		}
+		h1 {
+			color: #008CBA;
+		}
+		#btn-inicio {
+			background-color: #008CBA;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			font-size: 16px;
+			cursor: pointer;
+			position: absolute;
+			top: 20px;
+			right: 20px;
+		}
+
+        #search-form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto;
+            max-width: 500px;
+          }
+          
+          #search-input {
+            font-size: 18px;
+            padding: 10px;
+            width: 70%;
+            border: none;
+            border-bottom: 2px solid #008CBA;
+          }
+          
+          #search-button {
+            background-color: #008CBA;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 30%;
+            margin-left: 10px;
+          }
+          body {
+            background-color: #000;
+            color: #fff;
+          }
+
+
+
+
+
+
+
+
+
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Busca tu pelicula</h1>
+		<form id="search-form">
+			<input type="text" id="search-input" placeholder="Buscar películas...">
+			<button type="submit" id="search-button">Buscar</button>
+		</form>
+		<a href="index.html" id="btn-inicio">Inicio</a>
+	</header>
+	<main>
+		<section id="results-section"></section>
+	</main>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="buscador.js"></script>
+</body>
+</html>
