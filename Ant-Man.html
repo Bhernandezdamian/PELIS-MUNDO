@@ -45,6 +45,13 @@
             color: #f8f7f5;
         }
 
+        #offline-message {
+            text-align: center;
+            padding: 20px;
+            font-size: 18px;
+            color: #f44336;
+        }
+
         @media (min-width: 768px) {
             /* Estilos adicionales para pantallas de tamaño mediano (tablets, laptops, etc.) */
             #movie-info {
@@ -63,18 +70,32 @@
     </div>
     <a href="https://ia601602.us.archive.org/23/items/hdmovies-4u.-hair-ant-man.-and.-the.-wasp.-quantumania.-2023.720-p.-webrip/HDMovies4u.Hair-Ant-Man.And.The.Wasp.Quantumania.2023.720P.Webrip.Eng.1Xbet.mp4" target="_self" style="text-decoration: none; color: #fff; background-color: #4CAF50; padding: 10px 20px; border-radius: 4px; font-weight: bold;">Ver en pantalla completa</a>
 
-    
-
     <div id="movie-info">
         <h1>Ant-Man and the Wasp: Quantumania</h1>
         <div id="rating">Calificación: 8.3</div>
         <div id="description">
-            "Ant-Man and the Wasp: Quantumania" es una película de superhéroes de Marvel Comics, producida por Marvel Studios y distribuida por Walt Disney Studios Motion Pictures. Es la secuela de Ant-Man (2015) y Ant-Man and the Wasp (2018) y explora el Reino Cuántico introducido en las películas anteriores. La trama sigue a Ant-Man mientras se enfrenta a Kang the Conqueror, un villano que viaja en el tiempo y se ha apoderado del Reino Cuántico. Al final de la película, el equipo Ant-Man sobrevive, incluidos Scott, Hope, Cassie, Hank y Janet. La segunda escena posterior a los créditos establece la temporada 2 de "Loki".
+            "Ant-Man and the Wasp: Quantumania" es una película de superhéroes de Marvel Comics, producida por Marvel Studios y distribuida por Walt Disney Studios Motion Pictures. Es
+            <div id="description">
+                "Ant-Man and the Wasp: Quantumania" es una película de superhéroes de Marvel Comics, producida por Marvel Studios y distribuida por Walt Disney Studios Motion Pictures. Es la secuela de Ant-Man (2015) y Ant-Man and the Wasp (2018) y explora el Reino Cuántico introducido en las películas anteriores. La trama sigue a Ant-Man mientras se enfrenta a Kang the Conqueror, un villano que viaja en el tiempo y se ha apoderado del Reino Cuántico. Al final de la película, el equipo Ant-Man sobrevive, incluidos Scott, Hope, Cassie, Hank y Janet. La segunda escena posterior a los créditos establece la temporada 2 de "Loki".
+            </div>
         </div>
-    </div>
-
-    <script>
-        // Puedes agregar aquí cualquier código JavaScript adicional que necesites
-    </script>
-</body>
-</html>
+    
+        <div id="offline-message" style="display: none;">No tienes conexión a Internet. Por favor, revisa tu conexión e intenta nuevamente.</div>
+    
+        <script>
+            // Verificar la conexión a Internet
+            function checkOnlineStatus() {
+                var offlineMessage = document.getElementById('offline-message');
+                if (!navigator.onLine) {
+                    offlineMessage.style.display = 'block';
+                }
+            }
+    
+            // Ejecutar la verificación cuando se carga la página
+            window.addEventListener('load', checkOnlineStatus);
+    
+            // Puedes agregar aquí cualquier otro código JavaScript adicional que necesites
+        </script>
+    </body>
+    </html>
+    

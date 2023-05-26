@@ -6,9 +6,9 @@ const resultsSection = document.querySelector('#results-section');
 // Lista de películas
 const movies = [
 	{
-		title: 'El Padrino',
-		image: 'el_padrino.jpg',
-		link: 'https://www.imdb.com/title/tt0068646/',
+		title: 'Ant Man and the Wasp Quantumania',
+		image: 'Ant-Man.jpeg',
+		link: 'Ant-Man.html',
 	},
 	{
 		title: 'Regreso al Futuro',
