@@ -11,9 +11,14 @@ const movies = [
 		link: 'Ant-Man.html',
 	},
 	{
-		title: 'Regreso al Futuro',
-		image: 'regreso_al_futuro.jpg',
-		link: 'https://www.imdb.com/title/tt0088763/',
+		title: 'agentes 355',
+		image: 'Agentes 355.jpeg',
+		link: 'Agentes-355(2022).html',
+	},
+	{
+		title: 'moonfall',
+		image: 'moonfal.jpeg',
+		link: 'Moonfall.html',
 	},
 	// Agrega más objetos de películas aquí...
 ];
