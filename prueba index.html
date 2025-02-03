@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Películas</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #141414;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #000;
+        }
+
+        .logo h1 {
+            font-size: 2rem;
+            color: #e50914;
+        }
+
+        .navbar .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .navbar .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .nav-links a:hover {
+            color: #e50914;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 1rem;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://via.placeholder.com/1920x1080?text=Portada');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+        }
+
+        /* Carrusel de películas populares */
+        .carousel {
+            padding: 2rem;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .carousel::-webkit-scrollbar {
+            display: none; /* Ocultar la barra de desplazamiento */
+        }
+
+        .carousel .movie-item {
+            display: inline-block;
+            width: 150px;
+            height: 225px;
+            margin-right: 1rem;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .carousel .movie-item:hover {
+            transform: scale(1.1);
+        }
+
+        /* Categorías */
+        .categories {
+            padding: 2rem;
+        }
+
+        .categories h3 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            padding: 1rem;
+        }
+
+        .category-item {
+            position: relative;
+            width: 100%;
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .category-item span {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 0.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .category-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #000;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Media Queries para dispositivos móviles */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .navbar .nav-links {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .carousel .movie-item {
+                width: 120px;
+                height: 180px;
+            }
+
+            .category-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            }
+
+            .category-item {
+                height: 120px;
+            }
+
+            .category-item span {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
+
+            .categories h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Encabezado -->
+    <header class="header">
+        <div class="logo">
+            <h1>MiCine</h1>
+        </div>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="#" title="Acción">Acción</a></li>
+                <li><a href="#" title="Comedia">Comedia</a></li>
+                <li><a href="#" title="Drama">Drama</a></li>
+                <li><a href="#" title="Terror">Terror</a></li>
+                <li><a href="#" title="Romance">Romance</a></li>
+                <li><a href="#" title="Ciencia ficción">Ciencia ficción</a></li>
+                <li><a href="#" title="Niños">Niños</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="content">
+        <section class="hero">
+            <h2>Descubre tu próxima película favorita</h2>
+            <p>Explora una amplia selección de películas en todas las categorías.</p>
+        </section>
+
+        <!-- Carrusel de películas populares -->
+        <section class="carousel-section">
+            <h3>Películas populares</h3>
+            <div class="carousel">
+                <div class="movie-item" style="background-image: url('https://via.placeholder.com/150x225?text=Película+1');"></div>
+                <div class="movie-item" style="background-image: url('https://via.placeholder.com/150x225?text=Película+2');"></div>
+                <div class="movie-item" style="background-image: url('https://via.placeholder.com/150x225?text=Película+3');"></div>
+                <div class="movie-item" style="background-image: url('https://via.placeholder.com/150x225?text=Película+4');"></div>
+                <div class="movie-item" style="background-image: url('https://via.placeholder.com/150x225?text=Película+5');"></div>
+                <div class="movie-item" style="background-image: url('https://via.placeholder.com/150x225?text=Película+6');"></div>
+                <div class="movie-item" style="background-image: url('https://via.placeholder.com/150x225?text=Película+7');"></div>
+            </div>
+        </section>
+
+        <!-- Categorías de películas -->
+        <section class="categories">
+            <h3>Categorías populares</h3>
+            <div class="category-grid">
+                <div class="category-item" style="background-image: url('https://via.placeholder.com/300x200?text=Acción');">
+                    <span>Acción</span>
+                </div>
+                <div class="category-item" style="background-image: url('https://via.placeholder.com/300x200?text=Comedia');">
+                    <span>Comedia</span>
+                </div>
+                <div class="category-item" style="background-image: url('https://via.placeholder.com/300x200?text=Drama');">
+                    <span>Drama</span>
+                </div>
+                <div class="category-item" style="background-image: url('https://via.placeholder.com/300x200?text=Terror');">
+                    <span>Terror</span>
+                </div>
+                <div class="category-item" style="background-image: url('https://via.placeholder.com/300x200?text=Romance');">
+                    <span>Romance</span>
+                </div>
+                <div class="category-item" style="background-image: url('https://via.placeholder.com/300x200?text=Ciencia+Ficción');">
+                    <span>Ciencia Ficción</span>
+                </div>
+                <div class="category-item" style="background-image: url('https://via.placeholder.com/300x200?text=Niños');">
+                    <span>Niños</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <p>&copy; 2023 MiCine. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

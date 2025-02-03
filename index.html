@@ -20,6 +20,30 @@
       margin: 4px 2px;
       cursor: pointer;
     }
+
+ /* Estilo básico para el botón */
+ #toggleButton {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#toggleButton:hover {
+  background-color: #0056b3;
+}
+
+ /* Ocultar la lista inicialmente si lo deseas */
+ #categoryList {
+  display: block; /* Puedes cambiar a 'none' si quieres que esté oculta al inicio */
+}
+
+
+
+
   </style>
 
   <a href="buscador.html">
@@ -41,8 +65,12 @@
 <body>
   <header>
     <nav>
-      <h2>Lista de géneros</h2>
-      <ul>
+      <h2>Categorías</h2>
+      <!-- Botón para mostrar/ocultar -->
+      <button id="toggleButton">Ocultar Categorías</button>
+
+      <!-- Lista de categorías -->
+      <ul id="categoryList">
         <li><a href="#" title="Acción">Acción</a></li>
         <li><a href="#" title="Comedia">Comedia</a></li>
         <li><a href="#" title="Drama">Drama</a></li>
@@ -59,99 +87,84 @@
       <div class="slider-container">
         <div class="slider">
           <div class="movie-card">
-            <a href="Ant-Man.html">
-              <img src="Ant-Man.jpeg" alt="Ant-Man and the Wasp: Quantumania">
-              <h6 style="color: white;">Ant-Man and the Wasp: Quantumania </h6>
+            <a href="The Swarm (2024).html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/d1/f4e85c7512080610390cc831241e3d.jpg?5" alt="Ant-Man and the Wasp: Quantumania">
+              <h3 style="color: white;">The Swarm (2024) </h3>
             </a>
           </div>
           <div class="movie-card">
-            <a href="alerta-extrema.html">
-              <img src="alerta extrema.jpeg" alt="Movie 2">
-              <h3 style="color: white;">Alerta Extrema</h3>
+            <a href="Amenaza en el aire (2025).html">
+              <img src="https://ia600409.us.archive.org/24/items/xnsxsms/__ia_thumb.jpg" alt="Movie 2">
+              <h3 style="color: white;">Amenaza en el aire(2025)</h3>
               
             </a>
           </div>
 
           <div class="movie-card">
-            <a href="Atenea ( 2022).html">
-              <img src="Atenea ( 2022).jpeg" alt="Movie 2">
-              <h3 style="color: white;">Atenea 2022</h3>
+            <a href="The Liberation Men (2024).html">
+              <img src="https://ia600108.us.archive.org/16/items/jkjefjen/__ia_thumb.jpg" alt="Movie 2">
+              <h3 style="color: white;">The Liberation Men</h3>
             </a>
           </div>
 
 
           <div class="movie-card">
-            <a href="Agentes-355(2022).html">
-              <img src="Agentes 355.jpeg" alt="Movie 2">
-              <h3 style="color: white;">Agentes 355</h3>
+            <a href="Homestead (2024).html">
+              <img src="https://ia600807.us.archive.org/10/items/jxsxkjsj/__ia_thumb.jpg" alt="Movie 2">
+              <h3 style="color: white;">Homestead</h3>
             </a>
           </div>
 
           <div class="movie-card">
-            <a href="movie.html">
-              <img src="https://via.placeholder.com/200x300.png?text=Movie+2" alt="Movie 2">
-              <h3 style="color: white;">Movie 1</h3>
+            <a href="Dirty Angels (2024).html">
+              <img src="https://ia600608.us.archive.org/26/items/vdfdgfdh/__ia_thumb.jpg" alt="Movie 2">
+              <h3 style="color: white;">Dirty Angels</h3>
             </a>
           </div>
 
           <div class="movie-card">
-            <a href="movie.html">
-              <img src="https://via.placeholder.com/200x300.png?text=Movie+2" alt="Movie 2">
-              <h3 style="color: white;">Movie 1</h3>
+            <a href="El Robo Perfecto Pantera.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/bd/b9897416095da38d3c908aa0a8f74d.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">El Robo Perfecto: Pantera</h3>
             </a>
           </div>
 
 
 
           <div class="movie-card">
-            <a href="movie.html">
-              <img src="https://via.placeholder.com/200x300.png?text=Movie+2" alt="Movie 2">
-              <h3 style="color: white;">Movie 1</h3>
-            </a>
-          </div>
-
-
-          <div class="movie-card">
-            <a href="movie.html">
-              <img src="https://via.placeholder.com/200x300.png?text=Movie+2" alt="Movie 2">
-              <h3 style="color: white;">Movie 1</h3>
+            <a href="All the Lost Ones.html">
+              <img src="https://ia902303.us.archive.org/7/items/fbdfbd/__ia_thumb.jpg" alt="Movie 2">
+              <h3 style="color: white;">All the Lost Ones</h3>
             </a>
           </div>
 
 
           <div class="movie-card">
-            <a href="movie.html">
-              <img src="https://via.placeholder.com/200x300.png?text=Movie+2" alt="Movie 2">
-              <h3 style="color: white;">Movie 1</h3>
+            <a href="Watchmen Capítulo 2.html">
+              <img src="https://ia600606.us.archive.org/25/items/fbxfb/__ia_thumb.jpg" alt="Movie 2">
+              <h3 style="color: white;">Watchmen: Capítulo 2</h3>
             </a>
           </div>
 
 
           <div class="movie-card">
-            <a href="movie.html">
-              <img src="https://via.placeholder.com/200x300.png?text=Movie+2" alt="Movie 2">
-              <h3 style="color: white;">Movie 1</h3>
+            <a href="Hombre lobo (2024).html">
+              <img src="https://ia903402.us.archive.org/22/items/cvxvx/__ia_thumb.jpg" alt="Movie 2">
+              <h3 style="color: white;">Hombres lobo</h3>
             </a>
           </div>
 
 
+          <div class="movie-card">
+            <a href="Capitán América Brave New World (2024).html">
+              <img src="https://ia902205.us.archive.org/23/items/jdckjsd/__ia_thumb.jpg" alt="Movie 2">
+              <h3 style="color: white;">Capitán América: Brave New World</h3>
+            </a>
+          </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+         
+      
 
 
 
@@ -166,44 +179,75 @@
       <div class="slider-container">
         <div class="slider">
           <div class="movie-card">
-            <a href="movie.html">
-              <img src="https://via.placeholder.com/200x300.png?text=Movie+1" alt="Movie 1">
-              <h3 style="color: white;">Movie 1</h3>
+            <a href="Mufasa El rey león.html">
+              <img src="https://ia600106.us.archive.org/23/items/jgroerigoo/__ia_thumb.jpg" alt="Movie 1">
+              <h3 style="color: white;">Mufasa: El rey león</h3>
             </a>
           </div>
           <div class="movie-card">
-            <a href="movie.html">
-              <img src="https://via.placeholder.com/200x300.png?text=Movie+2" alt="Movie 2">
-              <h3 style="color: white;">Movie 1</h3>
+            <a href="Peter Pan El infierno de Nunca Jamás.html">
+              <img src="https://ia600808.us.archive.org/13/items/fjkejrrj/__ia_thumb.jpg" alt="Movie 2">
+              <h3 style="color: white;">Peter Pan: El infierno de...</h3>
               
             </a>
           </div>
 
           <div class="movie-card">
-            <a href="movie.html">
-              <img src="https://via.placeholder.com/200x300.png?text=Movie+2" alt="Movie 2">
-              <h3 style="color: white;">Movie 1</h3>
+            <a href="La ciudad sin Halloween.html">
+              <img src="https://ia904609.us.archive.org/13/items/jfdrgoir/__ia_thumb.jpg" alt="Movie 2">
+              <h3 style="color: white;">La ciudad sin Halloween</h3>
             </a>
           </div>
 
 
           <div class="movie-card">
-            <a href="movie.html">
-              <img src="https://via.placeholder.com/200x300.png?text=Movie+2" alt="Movie 2">
-              <h3 style="color: white;">Movie 1</h3>
+            <a href="Nosferatu.html">
+              <img src="https://ia600609.us.archive.org/32/items/djsjdvjdskjd_202501/__ia_thumb.jpg" alt="Movie 2">
+              <h3 style="color: white;">Nosferatu</h3>
             </a>
           </div>
 
           <div class="movie-card">
-            <a href="movie.html">
-              <img src="https://via.placeholder.com/200x300.png?text=Movie+2" alt="Movie 2">
-              <h3 style="color: white;">Movie 1</h3>
+            <a href="Escapar.html">
+              <img src="https://ia600107.us.archive.org/3/items/hdnuyiioio/__ia_thumb.jpg" alt="Movie 2">
+              <h3 style="color: white;">Escapar</h3>
             </a>
           </div>
 
+          <div class="movie-card">
+            <a href="El prodigio.html">
+              <img src="https://ia600609.us.archive.org/15/items/fbdffdhjyjuku/__ia_thumb.jpg" alt="Movie 2">
+              <h3 style="color: white;">El prodigio</h3>
+            </a>
+          </div>
 
+          <div class="movie-card">
+            <a href="Spithood.html">
+              <img src="https://ia600808.us.archive.org/1/items/bfbfgnjgy/__ia_thumb.jpg" alt="Movie 2">
+              <h3 style="color: white;">Escupitajo</h3>
+            </a>
+          </div>
 
+          <div class="movie-card">
+            <a href="Persona.html">
+              <img src="https://ia903407.us.archive.org/32/items/hfrjvodrog/__ia_thumb.jpg" alt="Movie 2">
+              <h3 style="color: white;">Persona</h3>
+            </a>
+          </div>
 
+          <div class="movie-card">
+            <a href="El hombre en la furgoneta blanca.html">
+              <img src="https://ia600807.us.archive.org/7/items/fjrkejkrjeri/__ia_thumb.jpg" alt="Movie 2">
+              <h3 style="color: white;">El hombre en la furgoneta...</h3>
+            </a>
+          </div>
+
+          <div class="movie-card">
+            <a href="Hombre lobo (2025).html">
+              <img src="https://ia904609.us.archive.org/20/items/cjjefeowioe/__ia_thumb.jpg" alt="Movie 2">
+              <h3 style="color: white;">Hombre lobo</h3>
+            </a>
+          </div>
 
 
 
@@ -214,52 +258,83 @@
 
 
     <section class="genre-slider">
-      <h2 style="color: white;">Niños</h2>
+      <h2 style="color: white;">Animación</h2>
       <div class="slider-container">
         <div class="slider">
           <div class="movie-card">
-            <a href="movie.html">
-              <img src="https://via.placeholder.com/200x300.png?text=Movie+1" alt="Movie 1">
-              <h3 style="color: white;">Movie 1</h3>
+            <a href="Moana 2.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/27/f1649ba99405e5da9bd6a9aa1f6a65.jpg?5" alt="Movie 1">
+              <h3 style="color: white;">Moana 2</h3>
             </a>
           </div>
           <div class="movie-card">
-            <a href="movie.html">
-              <img src="https://via.placeholder.com/200x300.png?text=Movie+2" alt="Movie 2">
-              <h3 style="color: white;">Movie 1</h3>
+            <a href="El Señor de los Anillos La Guerra de los Rohirrim.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/f9/78b7b05bd0958c2a14e563965b45a8.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">La Guerra de los Rohirrim</h3>
               
             </a>
           </div>
 
           <div class="movie-card">
-            <a href="movie.html">
-              <img src="https://via.placeholder.com/200x300.png?text=Movie+2" alt="Movie 2">
-              <h3 style="color: white;">Movie 1</h3>
+            <a href="Los exploradores.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/83/7ebfe80c68c952061beb1f974d7b39.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">Los exploradores</h3>
             </a>
           </div>
 
 
           <div class="movie-card">
-            <a href="movie.html">
-              <img src="https://via.placeholder.com/200x300.png?text=Movie+2" alt="Movie 2">
-              <h3 style="color: white;">Movie 1</h3>
+            <a href="Anzu, gato fantasma.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/bc/667a604cc6d0be45f9ec8e81650f17.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">Anzu, gato fantasma</h3>
             </a>
           </div>
 
           <div class="movie-card">
-            <a href="movie.html">
-              <img src="https://via.placeholder.com/200x300.png?text=Movie+2" alt="Movie 2">
-              <h3 style="color: white;">Movie 1</h3>
+            <a href="Elemental.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/2b/26228755a68256286b34f6836a9b64.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">Elemental</h3>
+            </a>
+          </div>
+
+          <div class="movie-card">
+            <a href="Lightyear.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/95/c82a1b5235610a4e3f6a961bbcd366.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">Lightyear</h3>
+            </a>
+          </div>
+
+          <div class="movie-card">
+            <a href="Mi villano favorito 4.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/9d/6eb70a7fefde4a437c713087937b52.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">Mi villano favorito 4</h3>
+            </a>
+          </div>
+
+          <div class="movie-card">
+            <a href="Transformers Uno.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/f4/1974f379a6539d4d87b31c30e14505.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">Transformers Uno</h3>
+            </a>
+          </div>
+
+          <div class="movie-card">
+            <a href="Watchmen Capítulo 1.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/c0/c8574d925b9cea4fd51add18bd585a.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">Watchmen: Capítulo 1</h3>
+            </a>
+          </div>
+
+          <div class="movie-card">
+            <a href="Memorias de un caracol.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/9a/c9fc9e683c58b542a52f1601f5b517.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">Memorias de un caracol</h3>
             </a>
           </div>
           <!-- Más tarjetas de películas -->
         </div>
       </div>
     </section>
-
-
-
-
 
 
 
@@ -269,38 +344,73 @@
       <div class="slider-container">
         <div class="slider">
           <div class="movie-card">
-            <a href="movie.html">
-              <img src="https://via.placeholder.com/200x300.png?text=Movie+1" alt="Movie 1">
-              <h3 style="color: white;">Movie 1</h3>
+            <a href="Anora.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/bb/b99fecb3d335894d3c3eb78cc515ca.jpg?5" alt="Movie 1">
+              <h3 style="color: white;">Anora</h3>
             </a>
           </div>
           <div class="movie-card">
-            <a href="movie.html">
-              <img src="https://via.placeholder.com/200x300.png?text=Movie+2" alt="Movie 2">
-              <h3 style="color: white;">Movie 1</h3>
+            <a href="Standing on the Shoulders of Kitties.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/d2/ac96e8fc0e172a554e031e885ae167.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">De pie sobre los hombros..</h3>
               
             </a>
           </div>
 
           <div class="movie-card">
-            <a href="movie.html">
-              <img src="https://via.placeholder.com/200x300.png?text=Movie+2" alt="Movie 2">
-              <h3 style="color: white;">Movie 1</h3>
+            <a href="How to Make a Killing.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/a2/753590d287ecd508941e05a546f3e4.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">Cómo hacer una matanza</h3>
             </a>
           </div>
 
 
           <div class="movie-card">
-            <a href="movie.html">
-              <img src="https://via.placeholder.com/200x300.png?text=Movie+2" alt="Movie 2">
-              <h3 style="color: white;">Movie 1</h3>
+            <a href="Runt.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/2b/29b97f6062c2ea1e23d7ad4bcbed67.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">Alrededor</h3>
             </a>
           </div>
 
           <div class="movie-card">
-            <a href="movie.html">
-              <img src="https://via.placeholder.com/200x300.png?text=Movie+2" alt="Movie 2">
-              <h3 style="color: white;">Movie 1</h3>
+            <a href="Moon Ghost Returns.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/9f/7cca936a80d595d1c972e1242b81f4.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">El fantasma de la luna regresa</h3>
+            </a>
+          </div>
+
+          <div class="movie-card">
+            <a href="Omni Loop.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/c1/cdabf4c14d0ff3357ee11b0f084e50.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">Omni Loop</h3>
+            </a>
+          </div>
+
+          <div class="movie-card">
+            <a href="Código Traje rojo.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/2a/4c26854702b8d4e51591563f0ad33f.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">Código: Traje rojo</h3>
+            </a>
+          </div>
+
+          <div class="movie-card">
+            <a href="Panda Plan.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/f6/8e3ee2fc127a0a85e253104073474d.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">Plan Panda</h3>
+            </a>
+          </div>
+
+          <div class="movie-card">
+            <a href="The Balconettes.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/cf/e1cb002e0f6789b980f0171fe38fb0.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">Los Balconettes</h3>
+            </a>
+          </div>
+
+          <div class="movie-card">
+            <a href="Algo le pasa a mi yerno.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/c6/1eb6ce8696b26fed165eed06eedc98.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">No sin mi psiquiatra</h3>
             </a>
           </div>
           <!-- Más tarjetas de películas -->
@@ -316,38 +426,73 @@
       <div class="slider-container">
         <div class="slider">
           <div class="movie-card">
-            <a href="movie.html">
-              <img src="https://via.placeholder.com/200x300.png?text=Movie+1" alt="Movie 1">
-              <h3 style="color: white;">Movie 1</h3>
+            <a href="The Brutalist.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/bb/4bfebeb121e08e77f701fdc151d861.jpg?5" alt="Movie 1">
+              <h3 style="color: white;">El brutalista</h3>
             </a>
           </div>
           <div class="movie-card">
-            <a href="movie.html">
-              <img src="https://via.placeholder.com/200x300.png?text=Movie+2" alt="Movie 2">
-              <h3 style="color: white;">Movie 1</h3>
+            <a href="Parthenope.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/5d/73f015f6889569c4edc2ac8ef4a371.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">Parthenope</h3>
               
             </a>
           </div>
 
           <div class="movie-card">
-            <a href="movie.html">
-              <img src="https://via.placeholder.com/200x300.png?text=Movie+2" alt="Movie 2">
-              <h3 style="color: white;">Movie 1</h3>
+            <a href="Culpa tuya.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/40/46e7d4a88b76628996078f8859c785.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">Culpa tuya</h3>
             </a>
           </div>
 
 
           <div class="movie-card">
-            <a href="movie.html">
-              <img src="https://via.placeholder.com/200x300.png?text=Movie+2" alt="Movie 2">
-              <h3 style="color: white;">Movie 1</h3>
+            <a href="Romper el círculo.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/ff/3484a5b6f010ade01f5953db5514d9.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">Romper el círculo</h3>
             </a>
           </div>
 
           <div class="movie-card">
-            <a href="movie.html">
-              <img src="https://via.placeholder.com/200x300.png?text=Movie+2" alt="Movie 2">
-              <h3 style="color: white;">Movie 1</h3>
+            <a href="Una maniobra arriesgada.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/47/3e4d99e40f36bb58269c1d7c7729e2.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">Una maniobra arriesgada</h3>
+            </a>
+          </div>
+
+          <div class="movie-card">
+            <a href="Sangre, Playa, Traición.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/90/96a2efd78660ef95a2a2f011f67ef4.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">Sangre, Playa, Traición</h3>
+            </a>
+          </div>
+
+          <div class="movie-card">
+            <a href="Haunted Heart.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/75/27cc5ebdbed2045aab42bd1528d428.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">Corazón embrujado</h3>
+            </a>
+          </div>
+
+          <div class="movie-card">
+            <a href="La madre de la novia.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/40/581da1c723fb004a8d72f582903e49.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">La madre de la novia</h3>
+            </a>
+          </div>
+
+          <div class="movie-card">
+            <a href="Llego a mí.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/78/5b90f3502a3a6d7321dc7c3cd55fd8.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">Llego a mí</h3>
+            </a>
+          </div>
+
+          <div class="movie-card">
+            <a href="21 paraíso.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/30/594b327e3339f9d314ff915145189f.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">21 Paraíso</h3>
             </a>
           </div>
           <!-- Más tarjetas de películas -->
@@ -364,38 +509,73 @@
       <div class="slider-container">
         <div class="slider">
           <div class="movie-card">
-            <a href="movie.html">
-              <img src="https://via.placeholder.com/200x300.png?text=Movie+1" alt="Movie 1">
-              <h3 style="color: white;">Movie 1</h3>
+            <a href="Sonic 3.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/ca/a94f0d7a91dc2ec20decee7e43d687.jpg?5" alt="Movie 1">
+              <h3 style="color: white;">Sonic 3 - La película</h3>
             </a>
           </div>
           <div class="movie-card">
-            <a href="movie.html">
-              <img src="https://via.placeholder.com/200x300.png?text=Movie+2" alt="Movie 2">
-              <h3 style="color: white;">Movie 1</h3>
+            <a href="Utopia.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/b3/26cdaf6fa03f9b4c4156d8e8f18379.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">Utopía</h3>
               
             </a>
           </div>
 
           <div class="movie-card">
-            <a href="movie.html">
-              <img src="https://via.placeholder.com/200x300.png?text=Movie+2" alt="Movie 2">
-              <h3 style="color: white;">Movie 1</h3>
+            <a href="Planet B.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/c7/37c686961ffe961eff0339d44240e3.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">Planeta B</h3>
             </a>
           </div>
 
 
           <div class="movie-card">
-            <a href="movie.html">
-              <img src="https://via.placeholder.com/200x300.png?text=Movie+2" alt="Movie 2">
-              <h3 style="color: white;">Movie 1</h3>
+            <a href="Trapped Inn.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/be/89d9100ff48b8111dcede4eedbff38.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">Posada Atrapada</h3>
             </a>
           </div>
 
           <div class="movie-card">
-            <a href="movie.html">
-              <img src="https://via.placeholder.com/200x300.png?text=Movie+2" alt="Movie 2">
-              <h3 style="color: white;">Movie 1</h3>
+            <a href="Venom El último baile.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/50/0895c79a5dad9f5e2a46a86eca381f.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">Venom: El último baile</h3>
+            </a>
+          </div>
+
+          <div class="movie-card">
+            <a href="Black Widow.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/b0/2fd0bc4d0fc85b8e8a8d689b4e48a2.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">Black Widow</h3>
+            </a>
+          </div>
+
+          <div class="movie-card">
+            <a href="Y2K.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/ba/aa3b59741d8e8c0cfb14eebd7e5b8d.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">Año 2000</h3>
+            </a>
+          </div>
+
+          <div class="movie-card">
+            <a href="Abaddon's Pit.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/d2/eb5ebfcb5c1e97378daae515c55a47.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">Pozo de Abadón</h3>
+            </a>
+          </div>
+
+          <div class="movie-card">
+            <a href="Year 10.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/09/276289cd8023920c190a16f87f81bb.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">Año 10</h3>
+            </a>
+          </div>
+
+          <div class="movie-card">
+            <a href="Dune.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/c0/a935b4abf5cc8dfcc83c49e1e28bc7.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">Dune</h3>
             </a>
           </div>
           <!-- Más tarjetas de películas -->
@@ -413,38 +593,73 @@
       <div class="slider-container">
         <div class="slider">
           <div class="movie-card">
-            <a href="movie.html">
-              <img src="https://via.placeholder.com/200x300.png?text=Movie+1" alt="Movie 1">
-              <h3 style="color: white;">Movie 1</h3>
+            <a href="El Maravilloso Mago de Oz Parte 1.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/1c/67ea54449a8397568c8c09672e0787.jpg?5" alt="Movie 1">
+              <h3 style="color: white;">El Maravilloso Mago de Oz</h3>
             </a>
           </div>
           <div class="movie-card">
-            <a href="movie.html">
-              <img src="https://via.placeholder.com/200x300.png?text=Movie+2" alt="Movie 2">
-              <h3 style="color: white;">Movie 1</h3>
+            <a href="Winter Island.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/d1/04289a86f091f535b61d7803372f41.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">Isla de Invierno</h3>
               
             </a>
           </div>
 
           <div class="movie-card">
-            <a href="movie.html">
-              <img src="https://via.placeholder.com/200x300.png?text=Movie+2" alt="Movie 2">
-              <h3 style="color: white;">Movie 1</h3>
+            <a href="The Fire Inside.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/80/956d6b877acd0acdf644fa4d83f13a.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">El Fuego Interior</h3>
             </a>
           </div>
 
 
           <div class="movie-card">
-            <a href="movie.html">
-              <img src="https://via.placeholder.com/200x300.png?text=Movie+2" alt="Movie 2">
-              <h3 style="color: white;">Movie 1</h3>
+            <a href="Oh, Canada.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/42/03d8b09bd3a8aa9bc6d423bcfc949e.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">Oh, Canada</h3>
             </a>
           </div>
 
           <div class="movie-card">
-            <a href="movie.html">
-              <img src="https://via.placeholder.com/200x300.png?text=Movie+2" alt="Movie 2">
-              <h3 style="color: white;">Movie 1</h3>
+            <a href="The Last Showgirl.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/66/205fc250e6f2c7431787ac3b5a844c.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">La última corista</h3>
+            </a>
+          </div>
+
+          <div class="movie-card">
+            <a href="This Is Me…Now.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/9b/630aacac1d73e51ba45ad143a916cf.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">Esta soy yo…ahora</h3>
+            </a>
+          </div>
+
+          <div class="movie-card">
+            <a href="Hay un nuevo asesino en la ciudad.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/76/150c8ee6305e2d486b056d82877537.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">Hay un nuevo asesino..</h3>
+            </a>
+          </div>
+
+          <div class="movie-card">
+            <a href="La habitación de al lado.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/53/276de9755a411ad622cc2fb679cf90.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">La habitación de al lado</h3>
+            </a>
+          </div>
+
+          <div class="movie-card">
+            <a href="Queer.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/8b/ea8c1608b1402f04d621e303ecd996.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">Queer</h3>
+            </a>
+          </div>
+
+          <div class="movie-card">
+            <a href="El recuerdo en mi corazón.html">
+              <img src="https://www.gnula.legal/uploads/mini/multi-poster/52/d4285cc5c36e142acce9b3bb0571b5.jpg?5" alt="Movie 2">
+              <h3 style="color: white;">El recuerdo en mi corazón</h3>
             </a>
           </div>
           <!-- Más tarjetas de películas -->
@@ -455,7 +670,29 @@
 
     <!-- Secciones para otras categorías de películas -->
 
-
+    <script>
+      // Obtener referencias a los elementos
+      const toggleButton = document.getElementById('toggleButton');
+      const categoryList = document.getElementById('categoryList');
+  
+      // Variable para rastrear el estado actual (visible/oculto)
+      let isVisible = true;
+  
+      // Agregar un evento al botón
+      toggleButton.addEventListener('click', () => {
+        if (isVisible) {
+          // Ocultar la lista
+          categoryList.style.display = 'none';
+          toggleButton.textContent = 'Mostrar Categorías';
+        } else {
+          // Mostrar la lista
+          categoryList.style.display = 'block';
+          toggleButton.textContent = 'Ocultar Categorías';
+        }
+        // Cambiar el estado
+        isVisible = !isVisible;
+      });
+    </script>
 
 
 
