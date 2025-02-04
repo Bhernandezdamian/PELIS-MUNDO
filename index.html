@@ -41,6 +41,59 @@
   display: block; /* Puedes cambiar a 'none' si quieres que esté oculta al inicio */
 }
 
+/* Estilo para la lista de categorías */
+#categoryList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+}
+
+/* Estilo para cada elemento de la lista */
+#categoryList li {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Estilo para los enlaces */
+#categoryList li a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #007BFF;
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+/* Hover effect para los enlaces */
+#categoryList li a:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+}
+
+/* Responsive design */
+@media (min-width: 768px) {
+  #categoryList {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #categoryList li {
+    width: auto;
+    margin: 10px;
+  }
+}
+
 
 
 
@@ -71,7 +124,7 @@
 
       <!-- Lista de categorías -->
       <ul id="categoryList">
-        <li><a href="#" title="Acción">Acción</a></li>
+        <li><a href="peliculas de accion.html" title="Acción">Acción</a></li>
         <li><a href="#" title="Comedia">Comedia</a></li>
         <li><a href="#" title="Drama">Drama</a></li>
         <li><a href="#" title="Terror">Terror</a></li>

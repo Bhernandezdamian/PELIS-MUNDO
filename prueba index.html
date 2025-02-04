@@ -33,21 +33,32 @@
             color: #e50914;
         }
 
-        .navbar .nav-links {
+        /* Botones de categorías */
+        #categoryList {
             list-style: none;
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
+            flex-wrap: wrap; /* Permite que los botones se ajusten en múltiples filas */
         }
 
-        .navbar .nav-links a {
-            text-decoration: none;
+        #categoryList li {
+            margin: 0.5rem 0;
+        }
+
+        #categoryList a {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: #333;
             color: #fff;
+            text-decoration: none;
+            border-radius: 20px; /* Bordes redondeados para un aspecto moderno */
             font-size: 1rem;
-            transition: color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
-        .navbar .nav-links a:hover {
-            color: #e50914;
+        #categoryList a:hover {
+            background-color: #e50914; /* Color rojo al pasar el mouse */
+            transform: scale(1.05); /* Efecto de zoom */
         }
 
         /* Hero Section */
@@ -159,9 +170,13 @@
                 gap: 1rem;
             }
 
-            .navbar .nav-links {
-                flex-direction: column;
-                gap: 0.5rem;
+            #categoryList {
+                justify-content: center; /* Centrar los botones en pantallas pequeñas */
+            }
+
+            #categoryList a {
+                font-size: 0.9rem;
+                padding: 0.6rem 1.2rem;
             }
 
             .hero h2 {
@@ -216,7 +231,7 @@
             <h1>MiCine</h1>
         </div>
         <nav class="navbar">
-            <ul class="nav-links">
+            <ul id="categoryList">
                 <li><a href="#" title="Acción">Acción</a></li>
                 <li><a href="#" title="Comedia">Comedia</a></li>
                 <li><a href="#" title="Drama">Drama</a></li>
@@ -284,3 +299,9 @@
     </footer>
 </body>
 </html>
+
+
+
+
+
+
