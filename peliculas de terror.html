@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Películas de Terror</title>
+  <style>
+    /* Reset básico y tipografía */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 20px;
+      font-size: 2em;
+    }
+
+    /* Contenedor de la lista de películas */
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      padding: 0 10px 40px;
+    }
+
+    /* Estilo de cada tarjeta de película */
+    .movie-item {
+      background-color: #111;
+      border-radius: 5px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      text-align: center;
+      width: 200px;
+    }
+
+    .movie-item:hover {
+      transform: scale(1.05);
+    }
+
+    .movie-item a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .movie-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .movie-item h3 {
+      padding: 10px;
+      font-size: 1em;
+    }
+
+    /* Botones de paginación */
+    .pagination {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .pagination button {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      margin: 0 5px;
+      cursor: pointer;
+      border-radius: 3px;
+      font-size: 1em;
+      transition: background-color 0.3s ease;
+    }
+
+    .pagination button:hover {
+      background-color: #444;
+    }
+
+    .pagination button.active {
+      background-color: #555;
+    }
+
+    .pagination button:disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
+
+    /* Responsive y Grid para dispositivos móviles */
+    @media (max-width: 768px) {
+      .movie-item {
+        width: 45%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.5em;
+        padding: 15px;
+      }
+      .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+        padding: 0 10px 40px;
+      }
+      .movie-item {
+        width: auto;
+      }
+      .pagination button {
+        padding: 8px 12px;
+        font-size: 0.9em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Películas de Terror</h1>
+
+  <!-- Botones de paginación superior -->
+  <div class="pagination" id="pagination-top"></div>
+
+  <!-- Contenedor de películas -->
+  <div class="container" id="movie-container">
+    <!-- Aquí se incluyen las tarjetas de películas -->
+    <div class="movie-item">
+      <a href="Mufasa El rey león.html">
+        <img src="https://ia600106.us.archive.org/23/items/jgroerigoo/__ia_thumb.jpg" alt="Mufasa: El rey león">
+        <h3>Mufasa: El rey león</h3>
+      </a>
+    </div>
+    <div class="movie-item">
+      <a href="Peter Pan El infierno de Nunca Jamás.html">
+        <img src="https://ia600808.us.archive.org/13/items/fjkejrrj/__ia_thumb.jpg" alt="Peter Pan: El infierno de Nunca Jamás">
+        <h3>Peter Pan: El infierno de Nunca Jamás</h3>
+      </a>
+    </div>
+    <div class="movie-item">
+      <a href="La ciudad sin Halloween.html">
+        <img src="https://ia904609.us.archive.org/13/items/jfdrgoir/__ia_thumb.jpg" alt="La ciudad sin Halloween">
+        <h3>La ciudad sin Halloween</h3>
+      </a>
+    </div>
+    <div class="movie-item">
+      <a href="Nosferatu.html">
+        <img src="https://ia600609.us.archive.org/32/items/djsjdvjdskjd_202501/__ia_thumb.jpg" alt="Nosferatu">
+        <h3>Nosferatu</h3>
+      </a>
+    </div>
+    <div class="movie-item">
+      <a href="Escapar.html">
+        <img src="https://ia600107.us.archive.org/3/items/hdnuyiioio/__ia_thumb.jpg" alt="Escapar">
+        <h3>Escapar</h3>
+      </a>
+    </div>
+    <div class="movie-item">
+      <a href="El prodigio.html">
+        <img src="https://ia600609.us.archive.org/15/items/fbdffdhjyjuku/__ia_thumb.jpg" alt="El prodigio">
+        <h3>El prodigio</h3>
+      </a>
+    </div>
+    <div class="movie-item">
+      <a href="Spithood.html">
+        <img src="https://ia600808.us.archive.org/1/items/bfbfgnjgy/__ia_thumb.jpg" alt="Escupitajo">
+        <h3>Escupitajo</h3>
+      </a>
+    </div>
+    <div class="movie-item">
+      <a href="Persona.html">
+        <img src="https://ia903407.us.archive.org/32/items/hfrjvodrog/__ia_thumb.jpg" alt="Persona">
+        <h3>Persona</h3>
+      </a>
+    </div>
+    <div class="movie-item">
+      <a href="El hombre en la furgoneta blanca.html">
+        <img src="https://ia600807.us.archive.org/7/items/fjrkejkrjeri/__ia_thumb.jpg" alt="El hombre en la furgoneta blanca">
+        <h3>El hombre en la furgoneta blanca</h3>
+      </a>
+    </div>
+    <div class="movie-item">
+      <a href="Hombre lobo (2025).html">
+        <img src="https://ia904609.us.archive.org/20/items/cjjefeowioe/__ia_thumb.jpg" alt="Hombre lobo">
+        <h3>Hombre lobo</h3>
+      </a>
+    </div>
+    <div class="movie-item">
+        <a href="Listen Carefully.html">
+          <img src="https://ia600805.us.archive.org/26/items/gjkrlekfrgjkr/__ia_thumb.jpg" alt="Escuche atentamente">
+          <h3>Escuche atentamente</h3>
+        </a>
+      </div>
+      <div class="movie-item">
+        <a href="La herencia.html">
+          <img src="https://www.gnula.legal/uploads/mini/multi-poster/f3/3469a8f439a420297c6dc1664adaf3.jpg?5" alt="La herencia">
+          <h3>La herencia</h3>
+        </a>
+      </div>
+      <div class="movie-item">
+        <a href="Sakaratul Maut.html">
+          <img src="https://www.gnula.legal/uploads/mini/multi-poster/19/0a421156d645da9d34d27bd7d24576.jpg?5" alt="Aviso de muerte">
+          <h3>Aviso de muerte</h3>
+        </a>
+      </div>
+      <div class="movie-item">
+        <a href="Neighbors Who Kill.html">
+          <img src="https://www.gnula.legal/uploads/mini/multi-poster/e0/627b8b7177cfbd005f0b6125b7e38f.jpg?5" alt="Vecinos que matan">
+          <h3>Vecinos que matan</h3>
+        </a>
+      </div>
+      <div class="movie-item">
+        <a href="Sonríe 2.html">
+          <img src="https://www.gnula.legal/uploads/mini/multi-poster/d3/9f4cf10e3f1310902d3c34171a9f6b.jpg?5" alt="Sonríe 2">
+          <h3>Sonríe 2</h3>
+        </a>
+      </div>
+      <div class="movie-item">
+        <a href="Do You See What I See.html">
+          <img src="https://www.gnula.legal/uploads/mini/multi-poster/c8/e0b2f7ba3c2c3b68b06a7f8fc5170b.jpg?5" alt="¿Ves lo que yo veo?">
+          <h3>¿Ves lo que yo veo?</h3>
+        </a>
+      </div>
+      <div class="movie-item">
+        <a href="Carnage for Christmas.html">
+          <img src="https://www.gnula.legal/uploads/mini/multi-poster/74/31052411d3cd1851ed9d1d48075537.jpg?5" alt="Carnicería para Navidad">
+          <h3>Carnicería para Navidad</h3>
+        </a>
+      </div>
+      <div class="movie-item">
+        <a href="Hauntología.html">
+          <img src="https://www19.pelisplushd.to/poster/hauntology-thumb.jpg" alt="Hauntología">
+          <h3>Hauntología</h3>
+        </a>
+      </div>
+      <div class="movie-item">
+        <a href="Sala de aislamiento.html">
+          <img src="https://www19.pelisplushd.to/poster/isolation-ward-thumb.jpg" alt="Sala de Aislamiento">
+          <h3>Sala de Aislamiento</h3>
+        </a>
+      </div>
+
+    <!-- Agrega más tarjetas según lo requieras -->
+  </div>
+
+  <!-- Botones de paginación inferior -->
+  <div class="pagination" id="pagination-bottom"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const container = document.getElementById('movie-container');
+      const items = Array.from(container.querySelectorAll('.movie-item'));
+      
+      // Configura la cantidad de películas a mostrar por página
+      const itemsPerPage = 6;
+      const totalItems = items.length;
+      const totalPages = Math.ceil(totalItems / itemsPerPage);
+      let currentPage = 1;
+      
+      // Si se encuentra un valor guardado en localStorage, se usa ese como página actual
+      const storedPage = localStorage.getItem('currentPage');
+      if (storedPage && !isNaN(storedPage) && storedPage > 0 && storedPage <= totalPages) {
+        currentPage = parseInt(storedPage, 10);
+      }
+      
+      // Define cuántos números mostrar alrededor de la página actual
+      const delta = 2;
+
+      /**
+       * Muestra las películas correspondientes a la página indicada.
+       * Guarda el número de página en localStorage.
+       * @param {number} page - Página a mostrar.
+       */
+      function showPage(page) {
+        currentPage = page;
+        // Guarda el número de página en localStorage
+        localStorage.setItem('currentPage', currentPage);
+
+        items.forEach((item, index) => {
+          const itemPage = Math.floor(index / itemsPerPage) + 1;
+          item.style.display = (itemPage === page) ? 'block' : 'none';
+        });
+        // Actualizamos la paginación en ambos contenedores
+        updatePagination(currentPage, totalPages, document.getElementById('pagination-top'));
+        updatePagination(currentPage, totalPages, document.getElementById('pagination-bottom'));
+      }
+
+      /**
+       * Actualiza el contenido del contenedor de paginación con botones dinámicos,
+       * mostrando un rango alrededor de la página actual y utilizando elipsis.
+       * @param {number} currentPage - La página actualmente activa.
+       * @param {number} totalPages - El total de páginas.
+       * @param {HTMLElement} paginationContainer - El contenedor donde se ubicarán los botones.
+       */
+      function updatePagination(currentPage, totalPages, paginationContainer) {
+        paginationContainer.innerHTML = '';
+
+        // Botón "Anterior"
+        const prevBtn = document.createElement('button');
+        prevBtn.innerText = '«';
+        prevBtn.disabled = currentPage === 1;
+        prevBtn.addEventListener('click', () => showPage(currentPage - 1));
+        paginationContainer.appendChild(prevBtn);
+
+        // Construir el rango a mostrar
+        const range = [];
+
+        // Siempre se muestra la primera página
+        range.push(1);
+
+        // Si hay un salto entre la primera página y el inicio del rango central
+        if (currentPage - delta > 2) {
+          range.push('...');
+        }
+
+        // Rango central
+        for (let i = Math.max(2, currentPage - delta); i <= Math.min(totalPages - 1, currentPage + delta); i++) {
+          range.push(i);
+        }
+
+        // Si hay un salto entre el final del rango central y la última página
+        if (currentPage + delta < totalPages - 1) {
+          range.push('...');
+        }
+
+        // Siempre se muestra la última página si es mayor a 1
+        if (totalPages > 1) {
+          range.push(totalPages);
+        }
+
+        // Crear los botones para cada elemento del rango
+        range.forEach(item => {
+          const btn = document.createElement('button');
+          btn.innerText = item;
+          if (item === currentPage) {
+            btn.classList.add('active');
+          }
+          if (item === '...') {
+            btn.disabled = true;
+          } else {
+            btn.addEventListener('click', () => showPage(item));
+          }
+          paginationContainer.appendChild(btn);
+        });
+
+        // Botón "Siguiente"
+        const nextBtn = document.createElement('button');
+        nextBtn.innerText = '»';
+        nextBtn.disabled = currentPage === totalPages;
+        nextBtn.addEventListener('click', () => showPage(currentPage + 1));
+        paginationContainer.appendChild(nextBtn);
+      }
+
+      // Mostrar la página almacenada o la primera página por defecto
+      showPage(currentPage);
+    });
+  </script>
+</body>
+</html>
