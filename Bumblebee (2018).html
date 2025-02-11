@@ -4,20 +4,71 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CineMundo - Película</title>
+  <!-- Si tienes un archivo CSS externo, puedes seguir usándolo -->
   <link rel="stylesheet" href="estilo general.css">
+  <style>
+   
+
+    /* Estilos para el header y el botón "Inicio" */
+    header {
+      background: #050505; /* Color de fondo opcional para visualizar el header */
+      padding: 20px;
+    }
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap; /* Permite que se acomoden en varias líneas en dispositivos pequeños */
+    }
+    #btn-inicio {
+      background-color: #008CBA;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+   
+
+    /* Media Query para dispositivos móviles */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      #btn-inicio {
+        margin-top: 10px;
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+      .movie-trailer iframe,
+      .movie-player iframe {
+        height: auto;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="container">
+    <!-- Header con el título y el botón "Inicio" -->
     <header>
-      <h1>CineMundo</h1>
+      <div class="header-container">
+        <h1>CineMundo</h1>
+        <a href="index.html" id="btn-inicio">Inicio</a>
+      </div>
     </header>
-
+    
+    <!-- Sección de detalles de la película -->
     <section class="movie-details">
-      <!-- Espacio para la portada -->
+      <!-- Portada de la película -->
       <div class="movie-cover">
-        <img src="https://ia600702.us.archive.org/4/items/fjkejrfhur/__ia_thumb.jpg" alt="Portada de la película" />
+        <img src="https://ia600702.us.archive.org/4/items/fjkejrfhur/__ia_thumb.jpg" alt="Portada de la película">
       </div>
 
+      <!-- Descripción de la película -->
       <div class="movie-description">
         <h2>Bumblebee</h2>
         <p><strong>Título Original:</strong> Abejorro</p>
@@ -30,14 +81,10 @@
         <h3>Sinopsis</h3>
         <p>
           Ver <strong>Bumblebee</strong> Online Latino, Español, Subtituladas Gratis | Gnula.  
-          En esta sexta entrega de la saga *Transformers*, nos adentramos en una historia más íntima y emocional. Ambientada en 1987, Bumblebee encuentra refugio en un depósito de chatarra de una tranquila ciudad californiana tras huir de una batalla. Charlie (Hailee Steinfeld), a punto de cumplir 18 años, descubre al Autobot descompuesto y decide repararlo. Pronto se da cuenta de que este no es un Volkswagen amarillo común, y juntos emprenden una aventura llena de acción, amistad y autodescubrimiento.
+          En esta sexta entrega de la saga <em>Transformers</em>, nos adentramos en una historia más íntima y emocional. Ambientada en 1987, Bumblebee encuentra refugio en un depósito de chatarra de una tranquila ciudad californiana tras huir de una batalla. Charlie (Hailee Steinfeld), a punto de cumplir 18 años, descubre al Autobot descompuesto y decide repararlo. Pronto se da cuenta de que este no es un Volkswagen amarillo común, y juntos emprenden una aventura llena de acción, amistad y autodescubrimiento.
         </p>
       </div>
       
-      
-      
-      
-
       <!-- Tráiler de la película -->
       <div class="movie-trailer">
         <h3>Tráiler</h3>
@@ -57,6 +104,7 @@
       </div>
     </section>
 
+    <!-- Footer del sitio -->
     <footer>
       <p>&copy; 2025 CineMundo. Todos los derechos reservados.</p>
     </footer>

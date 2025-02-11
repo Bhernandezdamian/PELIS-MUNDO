@@ -5,11 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CineMundo - Película</title>
   <link rel="stylesheet" href="estilo general.css">
+
+<style>
+   
+
+    /* Estilos para el header y el botón "Inicio" */
+    header {
+      background: #050505; /* Color de fondo opcional para visualizar el header */
+      padding: 20px;
+    }
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap; /* Permite que se acomoden en varias líneas en dispositivos pequeños */
+    }
+    #btn-inicio {
+      background-color: #008CBA;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+   
+
+    /* Media Query para dispositivos móviles */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      #btn-inicio {
+        margin-top: 10px;
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+      .movie-trailer iframe,
+      .movie-player iframe {
+        height: auto;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="container">
+    <!-- Header con el título y el botón "Inicio" -->
     <header>
-      <h1>CineMundo</h1>
+      <div class="header-container">
+        <h1>CineMundo</h1>
+        <a href="index.html" id="btn-inicio">Inicio</a>
+      </div>
     </header>
 
     <section class="movie-details">
