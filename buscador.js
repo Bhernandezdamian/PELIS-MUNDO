@@ -730,6 +730,12 @@ const movies = [
 		image: 'https://gnula.legal/uploads/mini/multi-poster/44/bb1562c7c0c6c5e2cceb40aed0de1e.jpg?5',
 		link: 'Chateau.html',
 	  },
+	  {
+		title: 'El Juego del Calamar',
+		image: 'https://ia600607.us.archive.org/26/items/jdewkejfwi/__ia_thumb.jpg',
+		link: 'El Juego del Calamar.html',
+	  },
+
 									
 ];
 
