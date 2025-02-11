@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Serie Premium - Plataforma de Streaming </title>
+  
+  <!-- Bootstrap CSS + Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  
+  <!-- Fuente personalizada -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Estilos mejorados para la sección hero */
+    .hero-section {
+      position: relative;
+      min-height: 80vh;
+      margin-bottom: 2rem;
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+
+    .hero-background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      filter: brightness(0.5) contrast(1.1);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 3rem 2rem;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+    }
+
+    .serie-title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+      margin-bottom: 1.5rem;
+    }
+
+    .serie-metadata {
+      max-width: 800px;
+      margin-bottom: 2rem;
+    }
+
+    .serie-description {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      max-width: 700px;
+    }
+
+    .badge-genre {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero-section {
+        min-height: 70vh;
+      }
+      
+      .serie-title {
+        font-size: 2.2rem;
+      }
+      
+      .serie-description {
+        font-size: 1rem;
+      }
+      
+      .hero-content {
+        padding: 2rem 1rem;
+      }
+      
+      .trailer-button {
+        bottom: 15px;
+        padding: 8px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header integrado en la navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark py-3">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <i class="bi bi-play-circle-fill text-primary fs-4"></i>
+        <span class="fw-bold">CineMundo</span>
+      </a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <!-- Sección Hero mejorada -->
+    <section class="hero-section">
+      <button class="trailer-button" 
+              data-bs-toggle="modal" 
+              data-bs-target="#trailerModal">
+        <i class="bi bi-play-circle"></i>
+        <span>Ver tráiler</span>
+      </button>
+
+      <img src="https://ia600607.us.archive.org/26/items/jdewkejfwi/__ia_thumb.jpg" 
+     class="hero-background" 
+     alt="Portada de El Juego del Calamar"
+     loading="lazy"
+     style="object-position: center center;">
+
+      <div class="hero-content">
+        <div class="serie-metadata">
+          <h1 class="serie-title">El Juego del Calamar</h1>
+          
+          <div class="d-flex align-items-center gap-3 mb-4">
+            <span class="badge bg-primary fs-6">HD</span>
+            <span class="text-white opacity-75">2021</span>
+            <span class="text-white opacity-75">18+</span>
+            <div class="d-flex gap-2 text-warning">
+              <i class="bi bi-star-fill"></i>
+              <span>8.0/10</span>
+            </div>
+          </div>
+
+          <p class="serie-description">
+            Cientos de jugadores cortos de dinero aceptan una extraña invitación a competir en juegos infantiles.<br>
+            Adentro les espera un premio irresistible… con un riesgo mortal.
+          </p>
+
+          <div class="mb-4">
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge badge-genre">Action & Adventure</span>
+              <span class="badge badge-genre">Drama</span>
+              <span class="badge badge-genre">Misterio</span>
+            </div>
+            <small class="text-muted d-block mt-2">Título original: 오징어 게임</small>
+          </div>
+
+          <div class="d-flex flex-wrap gap-3">
+            <button class="btn btn-lg btn-primary px-5 py-3 play-button-hint" 
+                    onclick="playFirstEpisode()">
+              <i class="bi bi-play-fill me-2"></i>Reproducir ahora
+            </button>
+            
+            <div class="d-flex gap-3">
+              <a href="https://www.themoviedb.org/tv/93405" 
+                 target="_blank" 
+                 class="btn btn-outline-light btn-sm"
+                 rel="noopener noreferrer">
+                <i class="bi bi-info-circle me-2"></i>TMDB
+              </a>
+              <a href="https://www.imdb.com/title/tt10919420/" 
+                 target="_blank" 
+                 class="btn btn-outline-light btn-sm"
+                 rel="noopener noreferrer">
+                <i class="bi bi-film me-2"></i>IMDB
+              </a>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-top border-secondary">
+            <small class="text-muted opacity-75">
+              Ver Squid Game Online Gratis | Ver El juego del calamar en latino | 
+              El juego del calamar Online Gratis | Descargar El juego del calamar Online
+            </small>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Modal del Trailer -->
+    <div class="modal fade" id="trailerModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content bg-dark border border-light">
+          <div class="modal-header border-0">
+            <h5 class="modal-title">Tráiler oficial</h5>
+            <button type="button" class="btn-close btn-close-white" 
+                    data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body p-0">
+            <div class="ratio ratio-16x9">
+              <iframe id="trailerVideo" 
+                      src="https://www.youtube.com/embed/CtrjHEHPC_A?si=KP_uh3YXcpgUFiB_" 
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope" 
+                      allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección de Temporadas -->
+    <section class="mb-5">
+      <h2 class="mb-4 fw-semibold"><i class="bi bi-collection-play me-2"></i>Temporadas</h2>
+      <div class="d-flex flex-wrap gap-3">
+        <button class="btn season-button" onclick="loadEpisodes('season1', this)">
+          <i class="bi bi-tv me-2"></i>Temporada 1
+        </button>
+        <button class="btn season-button" onclick="loadEpisodes('season2', this)">
+          <i class="bi bi-tv me-2"></i>Temporada 2
+        </button>
+      </div>
+    </section>
+
+    <!-- Sección de Episodios -->
+    <section id="episodes" class="mb-5" style="display: none;">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-semibold mb-0"><i class="bi bi-film me-2"></i>Episodios</h2>
+        <button class="btn btn-link text-primary" onclick="hideEpisodes()">
+          <i class="bi bi-arrow-left me-2"></i>Volver a temporadas
+        </button>
+      </div>
+      <div id="episode-buttons" class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-3">
+        <!-- Episodios generados dinámicamente -->
+      </div>
+    </section>
+
+    <!-- Sección de Video -->
+    <section id="video" class="mb-5" style="display: none;">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-semibold mb-0">
+          <i class="bi bi-play-circle me-2"></i>
+          <span id="video-title">Episodio Actual</span>
+        </h2>
+        <button class="btn btn-link text-primary" onclick="hideVideo()">
+          <i class="bi bi-x-lg me-2"></i>Cerrar reproductor
+        </button>
+      </div>
+      <div class="video-container">
+        <div class="ratio ratio-16x9">
+          <iframe id="video-iframe" class="video-iframe" 
+                  allow="autoplay; encrypted-media" 
+                  allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    const episodesData = {
+      "season1": [
+        { 
+          title: "1. Luz roja, luz verde", 
+          url: "https://goodstream.one/video/embed/e8g168i0xs27",
+          duration: "61 min",
+          description: "En bancarrota y con la esperanza de ganar dinero fácil, Gi‑hun acepta participar en un enigmático juego. Pero en la primera ronda, impensados horrores empiezan a ocurrir.",
+          thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABcgVURx2aVqBO-ahF6pNsqh6XLdN2zWXsjt7bPe0ndT4lLfoTynn8eOSHT4o5ERPRNaTuI9sEhEmjlkmS_enUWuYT54etS_Z2c9axK2q_rwm5ubHY9x5TwTG.jpg?r=e86"
+        },
+        { 
+          title: "2. Infierno", 
+          url: "https://goodstream.one/video/embed/uyup49zv3vwp",
+          duration: "64 min",
+          description: "Indeciso entre continuar o renunciar, el grupo lo somete a votación. Pero puede que la realidad del mundo exterior sea tan despiadada como el juego.",
+          thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABdkTxh49-uTZ6CQMb5ly-nTgu3d9vk9Ij9q2xjseCAjgo1d4SKUWwVXZD_RB9UH2ltggxNm0YylvOCjXNtSSorfBp9KJaTuz-a-cLkg6WWc93obVJzN33G9b.jpg?r=f56"
+        },
+        { 
+            title: "3. El hombre del paraguas", 
+            url: "https://goodstream.one/video/embed/nzn35p56e0s5",
+            duration: "55 min",
+            description: "Unos cuantos jugadores pasan a la siguiente ronda —que promete ser dulce y mortal a partes iguales— con ventajas ocultas. Entretanto, Jun‑ho consigue infiltrarse.",
+            thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABbARELvP6isNm5sHcvW4fgQyaff64BK9DcyIVRNotr8sm01spljhJBew99EMuYev1E58_2vbSa3xfxKCxrh3EdUupRyCUcwwXIUGVaqL__WvlMWR2hDqbG9N.jpg?r=72b"
+          },
+        { 
+            title: "4. No abandones el equipo", 
+            url: "https://goodstream.one/video/embed/h6wgdzmvbkmv",
+            duration: "56 min",
+            description: "Los jugadores pactan alianzas, y ya nadie está a salvo en el dormitorio cuando se apagan las luces. El tercer juego reta al equipo de Gi‑hun a pensar estratégicamente.",
+            thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABfULc6d4fbnWvJ3kp8idjBKtpmLkQG26rHgkPoZn7-YnjblZ94GTR-tL9a7A9cOKh90kjTmC58U_QABJpNj5irSClb1iQAQEKVqh9evgb9NUfgYshfAj0T3m.jpg?r=090"
+          },
+        { 
+            title: "5. Un mundo justo", 
+            url: "https://goodstream.one/video/embed/yn39tosvlcvh",
+            duration: "53 min",
+            description: "Gi‑hun y su equipo se turnan para hacer guardia durante la noche. Los enmascarados enfrentan problemas con sus cómplices.",
+            thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABayNMtg7c4dQ8I1vSbye_mXDsE8er_YuwdkmVnQ2WLcGPRSLyd9_ZyL8o9EEJT_1R2gZXc6kz_HkkHp4O4442H3Pfnqi8vHJPISMWcXgPfyh9PB8MQptrg6g.jpg?r=b94"
+          },
+        { 
+            title: "6. Gganbu", 
+            url: "https://goodstream.one/video/embed/tmz45u2jw62i",
+            duration: "63 min",
+            description: "Los jugadores hacen parejas para el cuarto juego. Gi‑hun lidia con un dilema moral, Sang‑woo escoge su propia supervivencia, y Sae‑byeok cuenta su historia.",
+            thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABYeAqA0G2uvoQS8qN2q-FS4pV3qFLEoKhtIU9ppSsPSqswtxaWcmt89kyA8-yteGYzicIkp0c3FrCV_oR4zurvcx3D-7Q8c204XLhUnqbj6xectZY8uTS0Yo.jpg?r=900"
+          },
+        { 
+            title: "7. Los VIP", 
+            url: "https://goodstream.one/video/embed/exim8ylgf3oi",
+            duration: "59 min",
+            description: "El líder enmascarado da la bienvenida a los invitados VIP para ver el show en primera fila. En el quinto juego, algunos competidores caen ante la presión.",
+            thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABYeAqA0G2uvoQS8qN2q-FS4pV3qFLEoKhtIU9ppSsPSqswtxaWcmt89kyA8-yteGYzicIkp0c3FrCV_oR4zurvcx3D-7Q8c204XLhUnqbj6xectZY8uTS0Yo.jpg?r=900"
+          },
+        { 
+            title: "8. El líder", 
+            url: "https://goodstream.one/video/embed/cews1f9p4tql",
+            duration: "33 min",
+            description: "Antes de la última fase, la desconfianza y el descontento se acrecientan entre los finalistas. Jun‑ho se escapa, decidido a revelar los secretos fraudulentos del juego.",
+            thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABRtEUf0r5ZlEO9TBKpla-ViSRU4flRZsFDpb_UZlZTyodClVp636EfLg0ZF1he4IDTY4e8LbvyWGakt9Kz3e-0GrMaaLyfm9U0TJKt5Vi6LVjAmgwOyfm3l4.jpg?r=63c"
+          } ,
+        { 
+            title: "9. Un día de suerte", 
+            url: "https://goodstream.one/video/embed/63xqj8ox1vks",
+            duration: "56 min",
+            description: "La última fase presenta una prueba cruel..., pero esta vez el resultado depende de un solo jugador. El creador del juego sale de las sombras.",
+            thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABYuDBORiZZ6UTJ-SNSjZObcUQ5zAv3bp2ii2id7yAODy90wk4Tjp4ah-rAESVX0N-0zk0uofP4jB8W8BXPLfDujwvLhNC2CDiBWtNX5ynvWQjy7h_8cha8Gt.jpg?r=c60"
+          }
+      ],
+      "season2": [
+        { 
+          title: "1. Sustento y azar", 
+          url: "https://goodstream.one/video/embed/aapawfm9va02",
+          duration: "65 min",
+          description: "Dispuesto a vengarse, Gi‑hun decide volver al aeropuerto. Más tarde, en su escondite, intensifica la búsqueda del escurridizo reclutador, quien ya está detrás de nuevos jugadores.",
+          thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABW8rjkPi0GcaxImHjy1t3Um3NBoRFMHfKD11tnA09W6ZWsSHyskhALEi7xy0-VkiJhIa5cF5zQcArJ7-AMJkBWP2QKbUEBSrrzVeZm2WK1RADcn7vNYhOgE4.jpg?r=1f7"
+        },
+        { 
+            title: "2. Fiesta de Halloween", 
+            url: "https://goodstream.one/video/embed/mdr8aopfoppe",
+            duration: "52 min",
+            description: "Gi‑hun finalmente consigue una invitación, con fecha para el día de Halloween. Luego, en medio de una tensa situación con Jun‑ho, ambos revelan sus verdaderas intenciones.",
+            thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABZl9CDSZHM5xodNwYQIKAJeN0HQmvvuK-ce97HSxMt2LsjUDpRDZHRj5Rz35cSnlrzXVVi0Zx-bYDbUjntGkZlZaI6nkv7ZnDiNht_Cx8c35bpL0mc782MT_.jpg?r=593"
+          },
+          { 
+            title: "3. 001", 
+            url: "https://goodstream.one/video/embed/zg3pxvgyibwt",
+            duration: "62 min",
+            description: "Nuevos jugadores llegan para competir por el premio multimillonario. Después de una primera ronda intensa, el destino de los sobrevivientes depende de un solo voto...",
+            thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABb-C038A52xUVeixaMdJcsoLPOW9XVFuP9kmqfM_hEG2QJzv5K8BE-JxI0R_utwWiuMofu-MR42lNkc9l9_IqasWe8rIBGt-FJwsWQmil3-d9dHTc7f05MLZ.jpg?r=19e"
+          },
+          { 
+            title: "4. Seis piernas", 
+            url: "https://goodstream.one/video/embed/75whbwv7pf4h",
+            duration: "63 min",
+            description: "Los competidores se preparan para el siguiente juego: Pentatlón a seis piernas. Cada integrante deberá superar una miniprueba... para evitar que todo su equipo quede eliminado.",
+            thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABVK-TtJdfvWjZ-3D2zXNx0rq7QfjSJBvXH_z6ARd6G7BnhDhhVqjEavhAy0sXrJDdx5vFu6PVtBd8rHO-jbRBIr3lJHIZStyqrAXpVK-KwU5-VkvuJwHPH5X.jpg?r=7cb"
+          },
+          { 
+            title: "5. Otra ronda", 
+            url: "https://goodstream.one/video/embed/vjje2rzjmlup",
+            duration: "76 min",
+            description: "Kang No‑eul gana enemigos por no seguir las reglas. La tensión crece hasta el límite cuando los jugadores que quedan deben decidir si avanzar o no a la siguiente ronda.",
+            thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABVK-TtJdfvWjZ-3D2zXNx0rq7QfjSJBvXH_z6ARd6G7BnhDhhVqjEavhAy0sXrJDdx5vFu6PVtBd8rHO-jbRBIr3lJHIZStyqrAXpVK-KwU5-VkvuJwHPH5X.jpg?r=7cb"
+          },
+          { 
+            title: "6. O X", 
+            url: "https://goodstream.one/video/embed/f5l630lu18u5",
+            duration: "52 min",
+            description: "Jun‑ho y su equipo se preparan para infiltrarse en una sospechosa isla. A medida que aumenta el dinero en juego, crece la tensión..., y los jugadores se dividen.",
+            thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABeQ2Kv6jb3CBhnHGvou0GI0374lWl5PJXO14SBcl00fw-hYkRV15L-RiErUrXrPEWlnrTJKF176p-pQJowlCg0-Wf4DNWTKsWPExTo6npFqtrKrA5YGKxwyL.jpg?r=d13"
+          },
+          { 
+            title: "7. Amigos o enemigos", 
+            url: "https://goodstream.one/video/embed/f5l630lu18u5",
+            duration: "60 min",
+            description: "Los jugadores finalistas buscan estrategias para sobrevivir durante la noche. Gi‑hun propone un plan arriesgado, pero para llevarlo a cabo, necesitará aliados confiables.",
+            thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABeQ2Kv6jb3CBhnHGvou0GI0374lWl5PJXO14SBcl00fw-hYkRV15L-RiErUrXrPEWlnrTJKF176p-pQJowlCg0-Wf4DNWTKsWPExTo6npFqtrKrA5YGKxwyL.jpg?r=d13"
+          }
+      ]
+    };
+
+    // Inicializar tooltips
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+    new bootstrap.Tooltip(document.querySelector('.trailer-button'));
+
+    function loadEpisodes(season, button) {
+      const episodesSection = document.getElementById('episodes');
+      const episodeButtons = document.getElementById('episode-buttons');
+      
+      document.querySelectorAll('.season-button').forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+      
+      episodeButtons.innerHTML = episodesData[season].map(episode => `
+        <div class="col">
+          <div class="episode-card p-4 h-100" onclick="loadVideo('${episode.url}', '${episode.title}')">
+            <div class="row g-3">
+              <div class="col-4">
+                <img src="${episode.thumbnail}" 
+                     class="img-fluid rounded-2" 
+                     alt="${episode.title}"
+                     loading="lazy">
+              </div>
+              <div class="col-8">
+                <h5 class="fw-semibold mb-2">${episode.title}</h5>
+                <p class="text-muted small mb-2">${episode.duration}</p>
+                <p class="small opacity-75 mb-0">${episode.description}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      `).join('');
+      
+      episodesSection.style.display = 'block';
+      window.scrollTo({ top: episodesSection.offsetTop - 100, behavior: 'smooth' });
+    }
+
+    function loadVideo(url, title) {
+      const videoSection = document.getElementById('video');
+      document.getElementById('video-title').textContent = title;
+      document.getElementById('video-iframe').src = url;
+      videoSection.style.display = 'block';
+      window.scrollTo({ top: videoSection.offsetTop - 100, behavior: 'smooth' });
+    }
+
+    function hideEpisodes() {
+      document.getElementById('episodes').style.display = 'none';
+      document.querySelectorAll('.season-button').forEach(btn => btn.classList.remove('active'));
+    }
+
+    function hideVideo() {
+      document.getElementById('video').style.display = 'none';
+      document.getElementById('video-iframe').src = '';
+    }
+
+    function playFirstEpisode() {
+      const firstSeason = Object.keys(episodesData)[0];
+      const firstEpisode = episodesData[firstSeason][0];
+      
+      const seasonButton = document.querySelector(`[onclick*="${firstSeason}"]`);
+      loadEpisodes(firstSeason, seasonButton);
+      
+      setTimeout(() => {
+        loadVideo(firstEpisode.url, firstEpisode.title);
+      }, 300);
+    }
+
+    // Control del trailer
+    const trailerModal = document.getElementById('trailerModal');
+    const trailerVideo = document.getElementById('trailerVideo');
+    
+    trailerModal.addEventListener('hidden.bs.modal', () => {
+      trailerVideo.src = trailerVideo.src.replace('&autoplay=1', '');
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

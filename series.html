@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Series</title>
+  <style>
+    /* Reset básico y tipografía */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 20px;
+      font-size: 2em;
+    }
+
+    /* Contenedor de la lista de películas */
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      padding: 0 10px 40px;
+    }
+
+    /* Estilo de cada tarjeta de película */
+    .movie-item {
+      background-color: #111;
+      border-radius: 5px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      text-align: center;
+      width: 200px;
+    }
+
+    .movie-item:hover {
+      transform: scale(1.05);
+    }
+
+    .movie-item a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .movie-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .movie-item h3 {
+      padding: 10px;
+      font-size: 1em;
+    }
+
+    /* Botones de paginación */
+    .pagination {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .pagination button {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      margin: 0 5px;
+      cursor: pointer;
+      border-radius: 3px;
+      font-size: 1em;
+      transition: background-color 0.3s ease;
+    }
+
+    .pagination button:hover {
+      background-color: #444;
+    }
+
+    .pagination button.active {
+      background-color: #555;
+    }
+
+    .pagination button:disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
+
+    /* Responsive y Grid para dispositivos móviles */
+    @media (max-width: 768px) {
+      .movie-item {
+        width: 45%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.5em;
+        padding: 15px;
+      }
+      .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+        padding: 0 10px 40px;
+      }
+      .movie-item {
+        width: auto;
+      }
+      .pagination button {
+        padding: 8px 12px;
+        font-size: 0.9em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Series</h1>
+
+  <!-- Botones de paginación superior -->
+  <div class="pagination" id="pagination-top"></div>
+
+  <!-- Contenedor de películas -->
+  <div class="container" id="movie-container">
+    <!-- Aquí se incluyen las tarjetas de películas -->
+    <div class="movie-item">
+      <a href="El Juego del Calamar.html">
+        <img src="https://ia600607.us.archive.org/26/items/jdewkejfwi/__ia_thumb.jpg" alt="Mufasa: El rey león">
+        <h3>El Juego del Calamar</h3>
+      </a>
+    </div>
+    
+    
+      
+      
+      
+
+  <!-- Botones de paginación inferior -->
+  <div class="pagination" id="pagination-bottom"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const container = document.getElementById('movie-container');
+      const items = Array.from(container.querySelectorAll('.movie-item'));
+      
+      // Configura la cantidad de películas a mostrar por página
+      const itemsPerPage = 6;
+      const totalItems = items.length;
+      const totalPages = Math.ceil(totalItems / itemsPerPage);
+      let currentPage = 1;
+      
+      // Si se encuentra un valor guardado en localStorage, se usa ese como página actual
+      const storedPage = localStorage.getItem('currentPage');
+      if (storedPage && !isNaN(storedPage) && storedPage > 0 && storedPage <= totalPages) {
+        currentPage = parseInt(storedPage, 10);
+      }
+      
+      // Define cuántos números mostrar alrededor de la página actual
+      const delta = 2;
+
+      /**
+       * Muestra las películas correspondientes a la página indicada.
+       * Guarda el número de página en localStorage.
+       * @param {number} page - Página a mostrar.
+       */
+      function showPage(page) {
+        currentPage = page;
+        // Guarda el número de página en localStorage
+        localStorage.setItem('currentPage', currentPage);
+
+        items.forEach((item, index) => {
+          const itemPage = Math.floor(index / itemsPerPage) + 1;
+          item.style.display = (itemPage === page) ? 'block' : 'none';
+        });
+        // Actualizamos la paginación en ambos contenedores
+        updatePagination(currentPage, totalPages, document.getElementById('pagination-top'));
+        updatePagination(currentPage, totalPages, document.getElementById('pagination-bottom'));
+      }
+
+      /**
+       * Actualiza el contenido del contenedor de paginación con botones dinámicos,
+       * mostrando un rango alrededor de la página actual y utilizando elipsis.
+       * @param {number} currentPage - La página actualmente activa.
+       * @param {number} totalPages - El total de páginas.
+       * @param {HTMLElement} paginationContainer - El contenedor donde se ubicarán los botones.
+       */
+      function updatePagination(currentPage, totalPages, paginationContainer) {
+        paginationContainer.innerHTML = '';
+
+        // Botón "Anterior"
+        const prevBtn = document.createElement('button');
+        prevBtn.innerText = '«';
+        prevBtn.disabled = currentPage === 1;
+        prevBtn.addEventListener('click', () => showPage(currentPage - 1));
+        paginationContainer.appendChild(prevBtn);
+
+        // Construir el rango a mostrar
+        const range = [];
+
+        // Siempre se muestra la primera página
+        range.push(1);
+
+        // Si hay un salto entre la primera página y el inicio del rango central
+        if (currentPage - delta > 2) {
+          range.push('...');
+        }
+
+        // Rango central
+        for (let i = Math.max(2, currentPage - delta); i <= Math.min(totalPages - 1, currentPage + delta); i++) {
+          range.push(i);
+        }
+
+        // Si hay un salto entre el final del rango central y la última página
+        if (currentPage + delta < totalPages - 1) {
+          range.push('...');
+        }
+
+        // Siempre se muestra la última página si es mayor a 1
+        if (totalPages > 1) {
+          range.push(totalPages);
+        }
+
+        // Crear los botones para cada elemento del rango
+        range.forEach(item => {
+          const btn = document.createElement('button');
+          btn.innerText = item;
+          if (item === currentPage) {
+            btn.classList.add('active');
+          }
+          if (item === '...') {
+            btn.disabled = true;
+          } else {
+            btn.addEventListener('click', () => showPage(item));
+          }
+          paginationContainer.appendChild(btn);
+        });
+
+        // Botón "Siguiente"
+        const nextBtn = document.createElement('button');
+        nextBtn.innerText = '»';
+        nextBtn.disabled = currentPage === totalPages;
+        nextBtn.addEventListener('click', () => showPage(currentPage + 1));
+        paginationContainer.appendChild(nextBtn);
+      }
+
+      // Mostrar la página almacenada o la primera página por defecto
+      showPage(currentPage);
+    });
+  </script>
+</body>
+</html>
