@@ -187,5 +187,51 @@
     iframe {
       height: 200px;
     }
+
+/* Estilo base para imitar un anuncio nativo */
+.native-ad-placeholder {
+  width: 100%;                  /* Ancho adaptable */
+  max-width: 728px;             /* Máximo ancho común para banners nativos */
+  padding: 15px;
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+
+.native-ad-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.native-ad-image {
+  width: 120px;
+  height: 90px;
+  background: #ddd;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.native-ad-text h3 {
+  margin: 0;
+  color: #1a0dab;
+  font-size: 16px;
+}
+
+.native-ad-text p {
+  margin: 8px 0;
+  color: #555;
+  font-size: 14px;
+}
+
+.native-ad-cta {
+  color: #065fd4;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+
   }
   
