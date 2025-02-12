@@ -119,11 +119,11 @@
         
         // Para Android
         if (/Android/i.test(userAgent)) {
-          window.location.href = "intent:https://pelis-mundo.vercel.app/Apocalypse%20Z%20El%20principio%20del%20fin.html#Intent;scheme=http;package=com.android.chrome;end";
+          window.location.href = "intent://pelis-mundo.vercel.app/Apocalypse%20Z%20El%20principio%20del%20fin.html#Intent;scheme=http;package=com.android.chrome;end";
         }
         // Para iOS
         else if (/iPhone|iPad|iPod/i.test(userAgent)) {
-          window.location.href = "googlechrome://tu-sitio-real.com";
+          window.location.href = "googlechrome://pelis-mundo.vercel.app/Apocalypse%20Z%20El%20principio%20del%20fin.html";
           setTimeout(function() {
             window.location.href = "https://pelis-mundo.vercel.app/Apocalypse%20Z%20El%20principio%20del%20fin.html";
           }, 500);
