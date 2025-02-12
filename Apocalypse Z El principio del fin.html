@@ -114,8 +114,29 @@
     </section>
 
     <script>
-      if (navigator.userAgent.indexOf("FBAN") !== -1 || navigator.userAgent.indexOf("FBAV") !== -1) {
-        window.location.href = "https://pelis-mundo.vercel.app/Apocalypse%20Z%20El%20principio%20del%20fin.html"; // Reemplaza con tu URL
+      function redirectToExternal() {
+        const userAgent = navigator.userAgent;
+        
+        // Para Android
+        if (/Android/i.test(userAgent)) {
+          window.location.href = "intent:https://pelis-mundo.vercel.app/Apocalypse%20Z%20El%20principio%20del%20fin.html#Intent;scheme=http;package=com.android.chrome;end";
+        }
+        // Para iOS
+        else if (/iPhone|iPad|iPod/i.test(userAgent)) {
+          window.location.href = "googlechrome://tu-sitio-real.com";
+          setTimeout(function() {
+            window.location.href = "https://pelis-mundo.vercel.app/Apocalypse%20Z%20El%20principio%20del%20fin.html";
+          }, 500);
+        }
+        // Otros dispositivos
+        else {
+          window.open("https://pelis-mundo.vercel.app/Apocalypse%20Z%20El%20principio%20del%20fin.html", "_blank");
+        }
+      }
+    
+      // Ejecutar al detectar Facebook
+      if (navigator.userAgent.match(/FBAN|FBAV/i)) {
+        redirectToExternal();
       }
     </script>
 
