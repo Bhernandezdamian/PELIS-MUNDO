@@ -95,17 +95,72 @@
       </div>
 
       <!-- Reproductor de la película en español -->
-      <div class="movie-player">
-        <div class="language-label">Español</div>
-        <iframe src="https://goodstream.one/embed-of0k95k7p6ae.html" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen></iframe>
-      </div>
+<div class="movie-player">
+  <div class="language-label">Español</div>
+  <iframe id="goodStream" src="https://goodstream.one/embed-of0k95k7p6ae.html" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen></iframe>
+  
+  <button onclick="openFullscreen('goodStream')" style="display: block; margin-top: 10px; padding: 10px 15px; font-size: 16px; background-color: #4CAF50; color: white; border: none; cursor: pointer; border-radius: 5px;">
+    🎬 Abrir película en pantalla completa
+  </button>
+</div>
 
-      <!-- Reproductor de la película en inglés -->
-      <div class="movie-player">
-        <div class="language-label">Inglés</div>
-        <iframe src="https://vidsrc.xyz/embed/movie?tmdb=1036312" style="width: 100%; height: 100%;" frameborder="0" referrerpolicy="origin" allowfullscreen></iframe>
-      </div>
-    </section>
+<br><br>
+
+<!-- Reproductor de la película en inglés -->
+<div class="movie-player">
+  <div class="language-label">Inglés</div>
+  <iframe id="vidsrc" src="https://vidsrc.xyz/embed/movie?tmdb=1036312" style="width: 100%; height: 100%;" frameborder="0" referrerpolicy="origin" allowfullscreen></iframe>
+
+  <button onclick="openFullscreen('vidsrc')" style="display: block; margin-top: 10px; padding: 10px 15px; font-size: 16px; background-color: #008CBA; color: white; border: none; cursor: pointer; border-radius: 5px;">
+    🎬 Abrir película en pantalla completa
+  </button>
+</div>
+
+<script>
+  function openFullscreen(frameId) {
+    var iframe = document.getElementById(frameId);
+
+    if (iframe.requestFullscreen) {
+      iframe.requestFullscreen();
+    } else if (iframe.mozRequestFullScreen) { // Firefox
+      iframe.mozRequestFullScreen();
+    } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari y Opera
+      iframe.webkitRequestFullscreen();
+    } else if (iframe.msRequestFullscreen) { // IE/Edge
+      iframe.msRequestFullscreen();
+    } else {
+      // Si no es compatible, abrir en una nueva pestaña
+      window.open(iframe.src, "_blank");
+    }
+  }
+</script>
+
+<script>
+  function redirectToExternal() {
+    const userAgent = navigator.userAgent;
+    
+    // Para Android
+    if (/Android/i.test(userAgent)) {
+      window.location.href = "intent://pelis-mundo.vercel.app/21%20para%C3%ADso.html#Intent;scheme=http;package=com.android.chrome;end";
+    }
+    // Para iOS
+    else if (/iPhone|iPad|iPod/i.test(userAgent)) {
+      window.location.href = "googlechrome://pelis-mundo.vercel.app/21%20para%C3%ADso.html";
+      setTimeout(function() {
+        window.location.href = "https://pelis-mundo.vercel.app/21%20para%C3%ADso.html";
+      }, 500);
+    }
+    // Otros dispositivos
+    else {
+      window.open("https://pelis-mundo.vercel.app/21%20para%C3%ADso.html", "_blank");
+    }
+  }
+
+  // Ejecutar al detectar Facebook
+  if (navigator.userAgent.match(/FBAN|FBAV/i)) {
+    redirectToExternal();
+  }
+</script>
 
     <footer>
       <p>&copy; 2025 CineMundo. Todos los derechos reservados.</p>
