@@ -90,11 +90,6 @@
         padding: 8px 15px;
       }
     }
-
-
-
-
-    
   </style>
 </head>
 <body>
@@ -119,10 +114,10 @@
       </button>
 
       <img src="https://ia600607.us.archive.org/26/items/jdewkejfwi/__ia_thumb.jpg" 
-     class="hero-background" 
-     alt="Portada de El Juego del Calamar"
-     loading="lazy"
-     style="object-position: center center;">
+           class="hero-background" 
+           alt="Portada de El Juego del Calamar"
+           loading="lazy"
+           style="object-position: center center;">
 
       <div class="hero-content">
         <div class="serie-metadata">
@@ -230,7 +225,6 @@
       </div>
     </section>
 
-
     <!-- Sección de Video -->
     <section id="video" class="mb-5" style="display: none;">
       <div class="d-flex justify-content-between align-items-center mb-4">
@@ -242,12 +236,19 @@
           <i class="bi bi-x-lg me-2"></i>Cerrar reproductor
         </button>
       </div>
-      <div class="video-container">
+      <!-- Se asigna id "videoContainer" para poder solicitar fullscreen -->
+      <div id="videoContainer" class="video-container">
         <div class="ratio ratio-16x9">
           <iframe id="video-iframe" class="video-iframe" 
                   allow="autoplay; encrypted-media" 
                   allowfullscreen></iframe>
         </div>
+      </div>
+      <!-- Botón para ver pantalla completa -->
+      <div class="text-center mt-3">
+        <button id="fullscreenBtn" class="btn btn-primary">
+          Ver pantalla completa
+        </button>
       </div>
     </section>
   </main>
@@ -273,54 +274,54 @@
           thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABdkTxh49-uTZ6CQMb5ly-nTgu3d9vk9Ij9q2xjseCAjgo1d4SKUWwVXZD_RB9UH2ltggxNm0YylvOCjXNtSSorfBp9KJaTuz-a-cLkg6WWc93obVJzN33G9b.jpg?r=f56"
         },
         { 
-            title: "3. El hombre del paraguas", 
-            url: "https://goodstream.one/video/embed/nzn35p56e0s5",
-            duration: "55 min",
-            description: "Unos cuantos jugadores pasan a la siguiente ronda —que promete ser dulce y mortal a partes iguales— con ventajas ocultas. Entretanto, Jun‑ho consigue infiltrarse.",
-            thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABbARELvP6isNm5sHcvW4fgQyaff64BK9DcyIVRNotr8sm01spljhJBew99EMuYev1E58_2vbSa3xfxKCxrh3EdUupRyCUcwwXIUGVaqL__WvlMWR2hDqbG9N.jpg?r=72b"
-          },
+          title: "3. El hombre del paraguas", 
+          url: "https://goodstream.one/video/embed/nzn35p56e0s5",
+          duration: "55 min",
+          description: "Unos cuantos jugadores pasan a la siguiente ronda —que promete ser dulce y mortal a partes iguales— con ventajas ocultas. Entretanto, Jun‑ho consigue infiltrarse.",
+          thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABbARELvP6isNm5sHcvW4fgQyaff64BK9DcyIVRNotr8sm01spljhJBew99EMuYev1E58_2vbSa3xfxKCxrh3EdUupRyCUcwwXIUGVaqL__WvlMWR2hDqbG9N.jpg?r=72b"
+        },
         { 
-            title: "4. No abandones el equipo", 
-            url: "https://goodstream.one/video/embed/h6wgdzmvbkmv",
-            duration: "56 min",
-            description: "Los jugadores pactan alianzas, y ya nadie está a salvo en el dormitorio cuando se apagan las luces. El tercer juego reta al equipo de Gi‑hun a pensar estratégicamente.",
-            thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABfULc6d4fbnWvJ3kp8idjBKtpmLkQG26rHgkPoZn7-YnjblZ94GTR-tL9a7A9cOKh90kjTmC58U_QABJpNj5irSClb1iQAQEKVqh9evgb9NUfgYshfAj0T3m.jpg?r=090"
-          },
+          title: "4. No abandones el equipo", 
+          url: "https://goodstream.one/video/embed/h6wgdzmvbkmv",
+          duration: "56 min",
+          description: "Los jugadores pactan alianzas, y ya nadie está a salvo en el dormitorio cuando se apagan las luces. El tercer juego reta al equipo de Gi‑hun a pensar estratégicamente.",
+          thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABfULc6d4fbnWvJ3kp8idjBKtpmLkQG26rHgkPoZn7-YnjblZ94GTR-tL9a7A9cOKh90kjTmC58U_QABJpNj5irSClb1iQAQEKVqh9evgb9NUfgYshfAj0T3m.jpg?r=090"
+        },
         { 
-            title: "5. Un mundo justo", 
-            url: "https://goodstream.one/video/embed/yn39tosvlcvh",
-            duration: "53 min",
-            description: "Gi‑hun y su equipo se turnan para hacer guardia durante la noche. Los enmascarados enfrentan problemas con sus cómplices.",
-            thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABayNMtg7c4dQ8I1vSbye_mXDsE8er_YuwdkmVnQ2WLcGPRSLyd9_ZyL8o9EEJT_1R2gZXc6kz_HkkHp4O4442H3Pfnqi8vHJPISMWcXgPfyh9PB8MQptrg6g.jpg?r=b94"
-          },
+          title: "5. Un mundo justo", 
+          url: "https://goodstream.one/video/embed/yn39tosvlcvh",
+          duration: "53 min",
+          description: "Gi‑hun y su equipo se turnan para hacer guardia durante la noche. Los enmascarados enfrentan problemas con sus cómplices.",
+          thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABayNMtg7c4dQ8I1vSbye_mXDsE8er_YuwdkmVnQ2WLcGPRSLyd9_ZyL8o9EEJT_1R2gZXc6kz_HkkHp4O4442H3Pfnqi8vHJPISMWcXgPfyh9PB8MQptrg6g.jpg?r=b94"
+        },
         { 
-            title: "6. Gganbu", 
-            url: "https://goodstream.one/video/embed/tmz45u2jw62i",
-            duration: "63 min",
-            description: "Los jugadores hacen parejas para el cuarto juego. Gi‑hun lidia con un dilema moral, Sang‑woo escoge su propia supervivencia, y Sae‑byeok cuenta su historia.",
-            thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABYeAqA0G2uvoQS8qN2q-FS4pV3qFLEoKhtIU9ppSsPSqswtxaWcmt89kyA8-yteGYzicIkp0c3FrCV_oR4zurvcx3D-7Q8c204XLhUnqbj6xectZY8uTS0Yo.jpg?r=900"
-          },
+          title: "6. Gganbu", 
+          url: "https://goodstream.one/video/embed/tmz45u2jw62i",
+          duration: "63 min",
+          description: "Los jugadores hacen parejas para el cuarto juego. Gi‑hun lidia con un dilema moral, Sang‑woo escoge su propia supervivencia, y Sae‑byeok cuenta su historia.",
+          thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABYeAqA0G2uvoQS8qN2q-FS4pV3qFLEoKhtIU9ppSsPSqswtxaWcmt89kyA8-yteGYzicIkp0c3FrCV_oR4zurvcx3D-7Q8c204XLhUnqbj6xectZY8uTS0Yo.jpg?r=900"
+        },
         { 
-            title: "7. Los VIP", 
-            url: "https://goodstream.one/video/embed/exim8ylgf3oi",
-            duration: "59 min",
-            description: "El líder enmascarado da la bienvenida a los invitados VIP para ver el show en primera fila. En el quinto juego, algunos competidores caen ante la presión.",
-            thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABYeAqA0G2uvoQS8qN2q-FS4pV3qFLEoKhtIU9ppSsPSqswtxaWcmt89kyA8-yteGYzicIkp0c3FrCV_oR4zurvcx3D-7Q8c204XLhUnqbj6xectZY8uTS0Yo.jpg?r=900"
-          },
+          title: "7. Los VIP", 
+          url: "https://goodstream.one/video/embed/exim8ylgf3oi",
+          duration: "59 min",
+          description: "El líder enmascarado da la bienvenida a los invitados VIP para ver el show en primera fila. En el quinto juego, algunos competidores caen ante la presión.",
+          thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABYeAqA0G2uvoQS8qN2q-FS4pV3qFLEoKhtIU9ppSsPSqswtxaWcmt89kyA8-yteGYzicIkp0c3FrCV_oR4zurvcx3D-7Q8c204XLhUnqbj6xectZY8uTS0Yo.jpg?r=900"
+        },
         { 
-            title: "8. El líder", 
-            url: "https://goodstream.one/video/embed/cews1f9p4tql",
-            duration: "33 min",
-            description: "Antes de la última fase, la desconfianza y el descontento se acrecientan entre los finalistas. Jun‑ho se escapa, decidido a revelar los secretos fraudulentos del juego.",
-            thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABRtEUf0r5ZlEO9TBKpla-ViSRU4flRZsFDpb_UZlZTyodClVp636EfLg0ZF1he4IDTY4e8LbvyWGakt9Kz3e-0GrMaaLyfm9U0TJKt5Vi6LVjAmgwOyfm3l4.jpg?r=63c"
-          } ,
+          title: "8. El líder", 
+          url: "https://goodstream.one/video/embed/cews1f9p4tql",
+          duration: "33 min",
+          description: "Antes de la última fase, la desconfianza y el descontento se acrecientan entre los finalistas. Jun‑ho se escapa, decidido a revelar los secretos fraudulentos del juego.",
+          thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABRtEUf0r5ZlEO9TBKpla-ViSRU4flRZsFDpb_UZlZTyodClVp636EfLg0ZF1he4IDTY4e8LbvyWGakt9Kz3e-0GrMaaLyfm9U0TJKt5Vi6LVjAmgwOyfm3l4.jpg?r=63c"
+        } ,
         { 
-            title: "9. Un día de suerte", 
-            url: "https://goodstream.one/video/embed/63xqj8ox1vks",
-            duration: "56 min",
-            description: "La última fase presenta una prueba cruel..., pero esta vez el resultado depende de un solo jugador. El creador del juego sale de las sombras.",
-            thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABYuDBORiZZ6UTJ-SNSjZObcUQ5zAv3bp2ii2id7yAODy90wk4Tjp4ah-rAESVX0N-0zk0uofP4jB8W8BXPLfDujwvLhNC2CDiBWtNX5ynvWQjy7h_8cha8Gt.jpg?r=c60"
-          }
+          title: "9. Un día de suerte", 
+          url: "https://goodstream.one/video/embed/63xqj8ox1vks",
+          duration: "56 min",
+          description: "La última fase presenta una prueba cruel..., pero esta vez el resultado depende de un solo jugador. El creador del juego sale de las sombras.",
+          thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABYuDBORiZZ6UTJ-SNSjZObcUQ5zAv3bp2ii2id7yAODy90wk4Tjp4ah-rAESVX0N-0zk0uofP4jB8W8BXPLfDujwvLhNC2CDiBWtNX5ynvWQjy7h_8cha8Gt.jpg?r=c60"
+        }
       ],
       "season2": [
         { 
@@ -331,47 +332,47 @@
           thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABW8rjkPi0GcaxImHjy1t3Um3NBoRFMHfKD11tnA09W6ZWsSHyskhALEi7xy0-VkiJhIa5cF5zQcArJ7-AMJkBWP2QKbUEBSrrzVeZm2WK1RADcn7vNYhOgE4.jpg?r=1f7"
         },
         { 
-            title: "2. Fiesta de Halloween", 
-            url: "https://goodstream.one/video/embed/mdr8aopfoppe",
-            duration: "52 min",
-            description: "Gi‑hun finalmente consigue una invitación, con fecha para el día de Halloween. Luego, en medio de una tensa situación con Jun‑ho, ambos revelan sus verdaderas intenciones.",
-            thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABZl9CDSZHM5xodNwYQIKAJeN0HQmvvuK-ce97HSxMt2LsjUDpRDZHRj5Rz35cSnlrzXVVi0Zx-bYDbUjntGkZlZaI6nkv7ZnDiNht_Cx8c35bpL0mc782MT_.jpg?r=593"
-          },
-          { 
-            title: "3. 001", 
-            url: "https://goodstream.one/video/embed/zg3pxvgyibwt",
-            duration: "62 min",
-            description: "Nuevos jugadores llegan para competir por el premio multimillonario. Después de una primera ronda intensa, el destino de los sobrevivientes depende de un solo voto...",
-            thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABb-C038A52xUVeixaMdJcsoLPOW9XVFuP9kmqfM_hEG2QJzv5K8BE-JxI0R_utwWiuMofu-MR42lNkc9l9_IqasWe8rIBGt-FJwsWQmil3-d9dHTc7f05MLZ.jpg?r=19e"
-          },
-          { 
-            title: "4. Seis piernas", 
-            url: "https://goodstream.one/video/embed/75whbwv7pf4h",
-            duration: "63 min",
-            description: "Los competidores se preparan para el siguiente juego: Pentatlón a seis piernas. Cada integrante deberá superar una miniprueba... para evitar que todo su equipo quede eliminado.",
-            thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABVK-TtJdfvWjZ-3D2zXNx0rq7QfjSJBvXH_z6ARd6G7BnhDhhVqjEavhAy0sXrJDdx5vFu6PVtBd8rHO-jbRBIr3lJHIZStyqrAXpVK-KwU5-VkvuJwHPH5X.jpg?r=7cb"
-          },
-          { 
-            title: "5. Otra ronda", 
-            url: "https://goodstream.one/video/embed/vjje2rzjmlup",
-            duration: "76 min",
-            description: "Kang No‑eul gana enemigos por no seguir las reglas. La tensión crece hasta el límite cuando los jugadores que quedan deben decidir si avanzar o no a la siguiente ronda.",
-            thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABVK-TtJdfvWjZ-3D2zXNx0rq7QfjSJBvXH_z6ARd6G7BnhDhhVqjEavhAy0sXrJDdx5vFu6PVtBd8rHO-jbRBIr3lJHIZStyqrAXpVK-KwU5-VkvuJwHPH5X.jpg?r=7cb"
-          },
-          { 
-            title: "6. O X", 
-            url: "https://goodstream.one/video/embed/f5l630lu18u5",
-            duration: "52 min",
-            description: "Jun‑ho y su equipo se preparan para infiltrarse en una sospechosa isla. A medida que aumenta el dinero en juego, crece la tensión..., y los jugadores se dividen.",
-            thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABeQ2Kv6jb3CBhnHGvou0GI0374lWl5PJXO14SBcl00fw-hYkRV15L-RiErUrXrPEWlnrTJKF176p-pQJowlCg0-Wf4DNWTKsWPExTo6npFqtrKrA5YGKxwyL.jpg?r=d13"
-          },
-          { 
-            title: "7. Amigos o enemigos", 
-            url: "https://goodstream.one/video/embed/f5l630lu18u5",
-            duration: "60 min",
-            description: "Los jugadores finalistas buscan estrategias para sobrevivir durante la noche. Gi‑hun propone un plan arriesgado, pero para llevarlo a cabo, necesitará aliados confiables.",
-            thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABeQ2Kv6jb3CBhnHGvou0GI0374lWl5PJXO14SBcl00fw-hYkRV15L-RiErUrXrPEWlnrTJKF176p-pQJowlCg0-Wf4DNWTKsWPExTo6npFqtrKrA5YGKxwyL.jpg?r=d13"
-          }
+          title: "2. Fiesta de Halloween", 
+          url: "https://goodstream.one/video/embed/mdr8aopfoppe",
+          duration: "52 min",
+          description: "Gi‑hun finalmente consigue una invitación, con fecha para el día de Halloween. Luego, en medio de una tensa situación con Jun‑ho, ambos revelan sus verdaderas intenciones.",
+          thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABZl9CDSZHM5xodNwYQIKAJeN0HQmvvuK-ce97HSxMt2LsjUDpRDZHRj5Rz35cSnlrzXVVi0Zx-bYDbUjntGkZlZaI6nkv7ZnDiNht_Cx8c35bpL0mc782MT_.jpg?r=593"
+        },
+        { 
+          title: "3. 001", 
+          url: "https://goodstream.one/video/embed/zg3pxvgyibwt",
+          duration: "62 min",
+          description: "Nuevos jugadores llegan para competir por el premio multimillonario. Después de una primera ronda intensa, el destino de los sobrevivientes depende de un solo voto...",
+          thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABb-C038A52xUVeixaMdJcsoLPOW9XVFuP9kmqfM_hEG2QJzv5K8BE-JxI0R_utwWiuMofu-MR42lNkc9l9_IqasWe8rIBGt-FJwsWQmil3-d9dHTc7f05MLZ.jpg?r=19e"
+        },
+        { 
+          title: "4. Seis piernas", 
+          url: "https://goodstream.one/video/embed/75whbwv7pf4h",
+          duration: "63 min",
+          description: "Los competidores se preparan para el siguiente juego: Pentatlón a seis piernas. Cada integrante deberá superar una miniprueba... para evitar que todo su equipo quede eliminado.",
+          thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABVK-TtJdfvWjZ-3D2zXNx0rq7QfjSJBvXH_z6ARd6G7BnhDhhVqjEavhAy0sXrJDdx5vFu6PVtBd8rHO-jbRBIr3lJHIZStyqrAXpVK-KwU5-VkvuJwHPH5X.jpg?r=7cb"
+        },
+        { 
+          title: "5. Otra ronda", 
+          url: "https://goodstream.one/video/embed/vjje2rzjmlup",
+          duration: "76 min",
+          description: "Kang No‑eul gana enemigos por no seguir las reglas. La tensión crece hasta el límite cuando los jugadores que quedan deben decidir si avanzar o no a la siguiente ronda.",
+          thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABVK-TtJdfvWjZ-3D2zXNx0rq7QfjSJBvXH_z6ARd6G7BnhDhhVqjEavhAy0sXrJDdx5vFu6PVtBd8rHO-jbRBIr3lJHIZStyqrAXpVK-KwU5-VkvuJwHPH5X.jpg?r=7cb"
+        },
+        { 
+          title: "6. O X", 
+          url: "https://goodstream.one/video/embed/f5l630lu18u5",
+          duration: "52 min",
+          description: "Jun‑ho y su equipo se preparan para infiltrarse en una sospechosa isla. A medida que aumenta el dinero en juego, crece la tensión..., y los jugadores se dividen.",
+          thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABeQ2Kv6jb3CBhnHGvou0GI0374lWl5PJXO14SBcl00fw-hYkRV15L-RiErUrXrPEWlnrTJKF176p-pQJowlCg0-Wf4DNWTKsWPExTo6npFqtrKrA5YGKxwyL.jpg?r=d13"
+        },
+        { 
+          title: "7. Amigos o enemigos", 
+          url: "https://goodstream.one/video/embed/f5l630lu18u5",
+          duration: "60 min",
+          description: "Los jugadores finalistas buscan estrategias para sobrevivir durante la noche. Gi‑hun propone un plan arriesgado, pero para llevarlo a cabo, necesitará aliados confiables.",
+          thumbnail: "https://occ-0-1227-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABeQ2Kv6jb3CBhnHGvou0GI0374lWl5PJXO14SBcl00fw-hYkRV15L-RiErUrXrPEWlnrTJKF176p-pQJowlCg0-Wf4DNWTKsWPExTo6npFqtrKrA5YGKxwyL.jpg?r=d13"
+        }
       ]
     };
 
@@ -425,8 +426,13 @@
     }
 
     function hideVideo() {
-      document.getElementById('video').style.display = 'none';
+      const videoSection = document.getElementById('video');
+      videoSection.style.display = 'none';
       document.getElementById('video-iframe').src = '';
+      // Si el reproductor está en pantalla completa, salimos de ese modo
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+      }
     }
 
     function playFirstEpisode() {
@@ -441,6 +447,18 @@
       }, 300);
     }
 
+    // Agregar funcionalidad al botón de pantalla completa
+    document.getElementById('fullscreenBtn').addEventListener('click', function() {
+      const videoContainer = document.getElementById('videoContainer');
+      if (videoContainer.requestFullscreen) {
+        videoContainer.requestFullscreen();
+      } else if (videoContainer.webkitRequestFullscreen) { /* Safari */
+        videoContainer.webkitRequestFullscreen();
+      } else if (videoContainer.msRequestFullscreen) { /* IE11 */
+        videoContainer.msRequestFullscreen();
+      }
+    });
+
     // Control del trailer
     const trailerModal = document.getElementById('trailerModal');
     const trailerVideo = document.getElementById('trailerVideo');
@@ -449,75 +467,35 @@
       trailerVideo.src = trailerVideo.src.replace('&autoplay=1', '');
     });
   </script>
+
+  <script>
+    function redirectToExternal() {
+      const userAgent = navigator.userAgent;
+      
+      // Para Android
+      if (/Android/i.test(userAgent)) {
+        window.location.href = "intent://pelis-mundo.vercel.app/El%20Juego%20del%20Calamar.html#Intent;scheme=http;package=com.android.chrome;end";
+      }
+      // Para iOS
+      else if (/iPhone|iPad|iPod/i.test(userAgent)) {
+        window.location.href = "googlechrome://pelis-mundo.vercel.app/El%20Juego%20del%20Calamar.html";
+        setTimeout(function() {
+          window.location.href = "https://pelis-mundo.vercel.app/El%20Juego%20del%20Calamar.html";
+        }, 500);
+      }
+      // Otros dispositivos
+      else {
+        window.open("https://pelis-mundo.vercel.app/El%20Juego%20del%20Calamar.html", "_blank");
+      }
+    }
+
+    // Ejecutar redirección al detectar la app de Facebook
+    if (navigator.userAgent.match(/FBAN|FBAV/i)) {
+      redirectToExternal();
+    }
+</script>
+
+
+
 </body>
 </html>
-
-
-
-
-
-
-
-<style>
-  /* Estilo base para imitar un anuncio nativo */
-  .native-ad-placeholder {
-      width: 100%;                  /* Ancho adaptable */
-      max-width: 728px;             /* Máximo ancho común para banners nativos */
-      padding: 15px;
-      background: #f8f9fa;
-      border: 1px solid #e0e0e0;
-      border-radius: 8px;
-      margin: 20px auto;
-      font-family: Arial, sans-serif;
-  }
-
-  .native-ad-content {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-  }
-
-  .native-ad-image {
-      width: 120px;
-      height: 90px;
-      background: #ddd;
-      border-radius: 4px;
-      flex-shrink: 0;
-  }
-
-  .native-ad-text h3 {
-      margin: 0;
-      color: #1a0dab;
-      font-size: 16px;
-  }
-
-  .native-ad-text p {
-      margin: 8px 0;
-      color: #555;
-      font-size: 14px;
-  }
-
-  .native-ad-cta {
-      color: #065fd4;
-      font-size: 12px;
-      text-decoration: none;
-  }
-</style>
-
-<!-- Contenedor del anuncio nativo simulado -->
-<div class="native-ad-placeholder">
-  <div class="native-ad-content">
-      <div class="native-ad-image"></div>
-      <div class="native-ad-text">
-          <h3>Artículo recomendado</h3>
-          <p>Descubre cómo optimizar tu sitio web en 2024 con estas estrategias.</p>
-          <a href="#" class="native-ad-cta">Leer más →</a>
-      </div>
-  </div>
-  <small style="display: block; color: #777; margin-top: 10px; font-size: 12px;">Publicidad</small>
-</div>
-
-
-
-
-
