@@ -144,7 +144,37 @@
       window.open(iframe.src, "_blank");
     }
   }
+  
 </script>
+
+
+<script>
+  function redirectToExternal() {
+    const userAgent = navigator.userAgent;
+    
+    // Para Android
+    if (/Android/i.test(userAgent)) {
+      window.location.href = "intent://pelis-mundo.vercel.app/Mufasa%20El%20rey%20le%C3%B3n.html#Intent;scheme=http;package=com.android.chrome;end";
+    }
+    // Para iOS
+    else if (/iPhone|iPad|iPod/i.test(userAgent)) {
+      window.location.href = "googlechrome://pelis-mundo.vercel.app/Mufasa%20El%20rey%20le%C3%B3n.html";
+      setTimeout(function() {
+        window.location.href = "https://pelis-mundo.vercel.app/Mufasa%20El%20rey%20le%C3%B3n.html";
+      }, 500);
+    }
+    // Otros dispositivos
+    else {
+      window.open("https://pelis-mundo.vercel.app/Mufasa%20El%20rey%20le%C3%B3n.html", "_blank");
+    }
+  }
+
+  // Ejecutar al detectar Facebook
+  if (navigator.userAgent.match(/FBAN|FBAV/i)) {
+    redirectToExternal();
+  }
+</script>
+
 
 
     <footer>
