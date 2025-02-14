@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineMundo - Película</title>
+  <link rel="stylesheet" href="estilo general.css">
+  <style>
+   
+
+    /* Estilos para el header y el botón "Inicio" */
+    header {
+      background: #050505; /* Color de fondo opcional para visualizar el header */
+      padding: 20px;
+    }
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap; /* Permite que se acomoden en varias líneas en dispositivos pequeños */
+    }
+    #btn-inicio {
+      background-color: #008CBA;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+   
+
+    /* Media Query para dispositivos móviles */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      #btn-inicio {
+        margin-top: 10px;
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+      .movie-trailer iframe,
+      .movie-player iframe {
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header con el título y el botón "Inicio" -->
+    <header>
+      <div class="header-container">
+        <h1>CineMundo</h1>
+        <a href="index.html" id="btn-inicio">Inicio</a>
+      </div>
+    </header>
+
+    <section class="movie-details">
+      <!-- Espacio para la portada -->
+      <div class="movie-cover">
+        <img src="https://ia903406.us.archive.org/15/items/jdkqjdejwk/__ia_thumb.jpg" alt="Portada de la película" />
+      </div>
+
+      <div class="movie-description">
+        <h2>LaRoy, Texas</h2>
+        <p><strong>IMDb:</strong> ★★★★★ ★★★★★ 6.5/10 de 5.9K votos</p>
+        <p><strong>Género:</strong> Comedia | Crimen | Suspenso</p>
+        <p><strong>Audio:</strong> Latino e Inglés subtitulada</p>
+        <p><strong>Calidad:</strong> Full HD Bluray</p>
+        <p><strong>Director:</strong> Shane Atkinson</p>
+        <p><strong>Elenco:</strong> Steve Zahn, John Magaro, A.J. Buckley, Galadriel Stineman, Dylan Baker, Matthew Del Negro, Bob Clendenin, Megan Stevenson, Brad Leland, Emily Pendergast</p>
+    
+        <h3>Sinopsis</h3>
+        <p>
+            Quebrado y deprimido, Ray es confundido por un peligroso sicario y le entregan un sobre lleno de dinero. Junto con su amigo investigador Skip, ahora debe escapar del verdadero asesino para salir de LaRoy con vida.
+        </p>
+    </div>
+    
+    
+    
+
+    
+      <!-- Tráiler de la película -->
+      <div class="movie-trailer">
+        <h3>Tráiler</h3>
+        <iframe src="https://www.youtube.com/embed/DYfL_MQ386c?si=9aTKH_5fqrwRgt5X" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+
+      <script async="async" data-cfasync="false" src="//nearlynightingalebust.com/2187f64b28ddba19b9b015c4d2f718a1/invoke.js"></script>
+  <div id="container-2187f64b28ddba19b9b015c4d2f718a1"></div>
+
+      <!-- Reproductor de la película en español -->
+      <div class="movie-player">
+        <div class="language-label">Español</div>
+        <iframe src="https://voe.sx/e/egnnqbxpgxkg" width="560" height="315" scrolling="no" frameborder="0" allowfullscreen></iframe>      </div>
+
+      <!-- Reproductor de la película en inglés -->
+      <div class="movie-player">
+        <div class="language-label">Inglés</div>
+        <iframe src="https://vidsrc.xyz/embed/movie?tmdb=1001783" style="width: 100%; height: 100%;" frameborder="0" referrerpolicy="origin" allowfullscreen></iframe>      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 CineMundo. Todos los derechos reservados.</p>
+    </footer>
+  </div>
+</body>
+</html>

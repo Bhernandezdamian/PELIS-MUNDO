@@ -66,6 +66,8 @@
         <img src="https://ia803400.us.archive.org/20/items/dhewiefi/__ia_thumb.jpg" alt="Portada de la película" />
       </div>
 
+
+
       <div class="movie-description">
         <h2>Hereje | Heretic</h2>
         <p><strong>IMDb:</strong> ★★★★★ ★★★★★  7.0/10 de 89K votos</p>
@@ -91,16 +93,77 @@
         <iframe src="https://www.youtube.com/embed/9n882E1doXY?si=Wv8KORAPUgoSXwdH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
 
-      <!-- Reproductor de la película en español -->
-      <div class="movie-player">
-        <div class="language-label">Español</div>
-        <iframe src="https://voe.sx/e/7ghdjo6db9un" width="560" height="315" scrolling="no" frameborder="0" allowfullscreen></iframe>      </div>
+      <script async="async" data-cfasync="false" src="//nearlynightingalebust.com/2187f64b28ddba19b9b015c4d2f718a1/invoke.js"></script>
+  <div id="container-2187f64b28ddba19b9b015c4d2f718a1"></div>
 
-      <!-- Reproductor de la película en inglés -->
-      <div class="movie-player">
-        <div class="language-label">Inglés</div>
-        <iframe src="https://vidsrc.xyz/embed/movie?tmdb=1138194" style="width: 100%; height: 100%;" frameborder="0" referrerpolicy="origin" allowfullscreen></iframe>
-      </div>
+      <!-- Reproductor de la película en español -->
+<div class="movie-player">
+  <div class="language-label">Español</div>
+  <iframe id="herejeEsp" src="https://voe.sx/e/7ghdjo6db9un" width="560" height="315" scrolling="no" frameborder="0" allowfullscreen></iframe>
+  
+  <button onclick="openFullscreen('herejeEsp')" style="display: block; margin-top: 10px; padding: 10px 15px; font-size: 16px; background-color: #4CAF50; color: white; border: none; cursor: pointer; border-radius: 5px;">
+    🎬 Abrir película en pantalla completa
+  </button>
+</div>
+
+<br><br>
+
+<!-- Reproductor de la película en inglés -->
+<div class="movie-player">
+  <div class="language-label">Inglés</div>
+  <iframe id="herejeEn" src="https://vidsrc.xyz/embed/movie?tmdb=1138194" style="width: 100%; height: 100%;" frameborder="0" referrerpolicy="origin" allowfullscreen></iframe>
+  
+  <button onclick="openFullscreen('herejeEn')" style="display: block; margin-top: 10px; padding: 10px 15px; font-size: 16px; background-color: #008CBA; color: white; border: none; cursor: pointer; border-radius: 5px;">
+    🎬 Abrir película en pantalla completa
+  </button>
+</div>
+
+<script>
+  function openFullscreen(frameId) {
+    var iframe = document.getElementById(frameId);
+
+    if (iframe.requestFullscreen) {
+      iframe.requestFullscreen();
+    } else if (iframe.mozRequestFullScreen) { // Firefox
+      iframe.mozRequestFullScreen();
+    } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari y Opera
+      iframe.webkitRequestFullscreen();
+    } else if (iframe.msRequestFullscreen) { // IE/Edge
+      iframe.msRequestFullscreen();
+    } else {
+      // Si no es compatible, abrir en una nueva pestaña
+      window.open(iframe.src, "_blank");
+    }
+  }
+</script>
+
+<script>
+  function redirectToExternal() {
+    const userAgent = navigator.userAgent;
+    
+    // Para Android
+    if (/Android/i.test(userAgent)) {
+      window.location.href = "intent://pelis-mundo.vercel.app/Hereje.html#Intent;scheme=http;package=com.android.chrome;end";
+    }
+    // Para iOS
+    else if (/iPhone|iPad|iPod/i.test(userAgent)) {
+      window.location.href = "googlechrome://pelis-mundo.vercel.app/Hereje.html";
+      setTimeout(function() {
+        window.location.href = "https://pelis-mundo.vercel.app/Hereje.html";
+      }, 500);
+    }
+    // Otros dispositivos
+    else {
+      window.open("https://pelis-mundo.vercel.app/Hereje.html", "_blank");
+    }
+  }
+
+  // Ejecutar al detectar Facebook
+  if (navigator.userAgent.match(/FBAN|FBAV/i)) {
+    redirectToExternal();
+  }
+</script>
+
     </section>
 
     <footer>
