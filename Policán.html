@@ -6,8 +6,6 @@
   <title>CineMundo - Película</title>
   <link rel="stylesheet" href="estilo general.css">
   <style>
-   
-
     /* Estilos para el header y el botón "Inicio" */
     header {
       background: #050505; /* Color de fondo opcional para visualizar el header */
@@ -17,7 +15,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap; /* Permite que se acomoden en varias líneas en dispositivos pequeños */
+      flex-wrap: wrap;
     }
     #btn-inicio {
       background-color: #008CBA;
@@ -29,8 +27,6 @@
       cursor: pointer;
       text-decoration: none;
     }
-
-   
 
     /* Media Query para dispositivos móviles */
     @media (max-width: 768px) {
@@ -56,7 +52,7 @@
     <header>
       <div class="header-container">
         <h1>CineMundo</h1>
-        <a href="index.html" id="btn-inicio">Inicio</a>
+        <a href="https://pelis-mundo.vercel.app" id="btn-inicio">Inicio</a>
       </div>
     </header>
 
@@ -68,42 +64,91 @@
 
       <div class="movie-description">
         <h2>Policán</h2>
-        <p><strong>Año de Estreno:</strong> 2025</p>
+        <p><strong>Título Original:</strong> Policán</p>
+        <p><strong>Año de estreno:</strong> 2024</p>
         <p><strong>País:</strong> EE.UU.</p>
         <p><strong>Géneros:</strong> Próximos estrenos, Acción, Animación, Comedia, Ciencia ficción</p>
+        <p><strong>Director:</strong> Peter Hastings</p>
+        <p><strong>Actores:</strong> Pete Davidson, Lil Rel Howery, Stephen Root</p>
+    
         <h3>Sinopsis</h3>
         <p>
-          Ver <strong>Policán</strong> Online Latino, Español, Subtituladas Gratis | Gnula.  
-          Un policía y su perro resultan heridos durante una operación. Una intervención quirúrgica que les salva la vida cambia el curso de la historia y da lugar al nacimiento del Hombre Perro.  
-          Dog Man, mitad perro, mitad hombre, persigue ahora tenazmente a su archienemigo: el malvado depredador felino Petey.
+            Un policía y su perro resultan heridos durante una operación. Una intervención quirúrgica que les salva la vida cambia el curso de la historia y da lugar al nacimiento del Hombre Perro. Dog Man, mitad perro, mitad hombre, persigue ahora tenazmente a su archienemigo: el malvado depredador felino Petey.
         </p>
-        <h3>Ficha Técnica</h3>
-        <p><strong>Directores:</strong> Peter Hastings</p>
-        <p><strong>Actores:</strong> Pete Davidson, Lil Rel Howery, Stephen Root</p>
       </div>
-      
-      
-      
-      
-      
-
+    
       <!-- Tráiler de la película -->
       <div class="movie-trailer">
         <h3>Tráiler</h3>
         <iframe src="https://www.youtube.com/embed/SGW3-K1RJTQ?si=gLpEJOynkQpgC14z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
 
+      <script async="async" data-cfasync="false" src="//nearlynightingalebust.com/2187f64b28ddba19b9b015c4d2f718a1/invoke.js"></script>
+  <div id="container-2187f64b28ddba19b9b015c4d2f718a1"></div>
+
       <!-- Reproductor de la película en español -->
       <div class="movie-player">
         <div class="language-label">Español</div>
-        <iframe src="https://goodstream.one/embed-fgh13o9ugnfo.html" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen></iframe>
+        <iframe id="spanishIframe" src="https://goodstream.one/embed-fgh13o9ugnfo.html" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen></iframe>
+        <button onclick="openFullscreen('spanishIframe')" style="display: block; margin-top: 10px; padding: 10px 15px; font-size: 16px; background-color: #4CAF50; color: white; border: none; cursor: pointer; border-radius: 5px;">
+          🎬 Abrir película en pantalla completa
+        </button>
       </div>
+
+      <br><br>
 
       <!-- Reproductor de la película en inglés -->
       <div class="movie-player">
         <div class="language-label">Inglés</div>
-        <iframe src="https://vidsrc.xyz/embed/movie?tmdb=774370" style="width: 100%; height: 100%;" frameborder="0" referrerpolicy="origin" allowfullscreen></iframe>
+        <iframe id="englishIframe" src="https://vidsrc.xyz/embed/movie?tmdb=774370" style="width: 100%; height: 100%;" frameborder="0" referrerpolicy="origin" allowfullscreen></iframe>
+        <button onclick="openFullscreen('englishIframe')" style="display: block; margin-top: 10px; padding: 10px 15px; font-size: 16px; background-color: #008CBA; color: white; border: none; cursor: pointer; border-radius: 5px;">
+          🎬 Abrir película en pantalla completa
+        </button>
       </div>
+
+      <script>
+        function openFullscreen(frameId) {
+          var iframe = document.getElementById(frameId);
+
+          if (iframe.requestFullscreen) {
+            iframe.requestFullscreen();
+          } else if (iframe.mozRequestFullScreen) { // Firefox
+            iframe.mozRequestFullScreen();
+          } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari y Opera
+            iframe.webkitRequestFullscreen();
+          } else if (iframe.msRequestFullscreen) { // IE/Edge
+            iframe.msRequestFullscreen();
+          } else {
+            // Si no es compatible, abrir en una nueva pestaña
+            window.open(iframe.src, "_blank");
+          }
+        }
+
+        function redirectToExternal() {
+          const userAgent = navigator.userAgent;
+          
+          // Para Android
+          if (/Android/i.test(userAgent)) {
+            window.location.href = "intent://pelis-mundo.vercel.app/Polic%C3%A1n.html#Intent;scheme=http;package=com.android.chrome;end";
+          }
+          // Para iOS
+          else if (/iPhone|iPad|iPod/i.test(userAgent)) {
+            window.location.href = "googlechrome://pelis-mundo.vercel.app/Polic%C3%A1n.html";
+            setTimeout(function() {
+              window.location.href = "https://pelis-mundo.vercel.app/Polic%C3%A1n.html";
+            }, 500);
+          }
+          // Otros dispositivos
+          else {
+            window.open("https://pelis-mundo.vercel.app/Polic%C3%A1n.html", "_blank");
+          }
+        }
+
+        // Ejecutar al detectar Facebook
+        if (navigator.userAgent.match(/FBAN|FBAV/i)) {
+          redirectToExternal();
+        }
+      </script>
     </section>
 
     <footer>
