@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generador de Página de Película</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    .output {
+      margin-top: 30px;
+    }
+    pre {
+      background-color: #eee;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 14px;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Generador de Página de Película</h2>
+
+    <form id="movieForm">
+      <label for="imagen">URL de la imagen de la película:</label>
+      <input type="url" id="imagen" required>
+
+      <label for="titulo">Título de la película:</label>
+      <input type="text" id="titulo" required>
+
+      <label for="descripcion">Descripción de la película:</label>
+      <textarea id="descripcion" rows="4" required></textarea>
+
+      <label for="trailer">URL del tráiler:</label>
+      <input type="url" id="trailer" required>
+
+      <label for="iframeEspañol">Iframe de la película en Español:</label>
+      <input type="url" id="iframeEspañol" required>
+
+      <label for="iframeIngles">Iframe de la película en Inglés:</label>
+      <input type="url" id="iframeIngles" required>
+
+      <label for="urlLocal">URL Local de Visual Studio Code:</label>
+      <input type="url" id="urlLocal" required>
+
+      <!-- Se llama a la función generarCodigo definida en window -->
+      <button type="button" onclick="generarCodigo()">Generar Código HTML</button>
+    </form>
+
+    <div class="output">
+      <h3>Código HTML generado:</h3>
+      <pre id="codigoSalida"></pre>
+    </div>
+  </div>
+
+  <!-- Asegúrate de que este script esté después de los elementos del DOM -->
+  <script>
+    // Asignamos la función al objeto window para que esté en el ámbito global
+    window.generarCodigo = function() {
+      // Obtener los valores ingresados por el usuario
+      const imagen = document.getElementById('imagen').value;
+      const titulo = document.getElementById('titulo').value;
+      const descripcion = document.getElementById('descripcion').value;
+      const trailer = document.getElementById('trailer').value;
+      const iframeEspañol = document.getElementById('iframeEspañol').value;
+      const iframeIngles = document.getElementById('iframeIngles').value;
+      const urlLocal = document.getElementById('urlLocal').value;
+
+      // Crear el código HTML con los valores ingresados
+      const codigoHTML = `<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineMundo - Película</title>
+  <link rel="stylesheet" href="estilo general.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>CineMundo</h1>
+      <a href="index.html">Inicio</a>
+    </header>
+
+    <section class="movie-details">
+      <div class="movie-cover">
+        <img src="${imagen}" alt="Portada de la película">
+      </div>
+
+      <div class="movie-description">
+        <h2>${titulo}</h2>
+        <p><strong>Descripción:</strong></p>
+        <p>${descripcion}</p>
+      </div>
+
+      <div class="movie-trailer">
+        <h3>Tráiler</h3>
+        <iframe src="${trailer}" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <div class="movie-player">
+        <h3>Película en Español</h3>
+        <iframe src="${iframeEspañol}" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <div class="movie-player">
+        <h3>Película en Inglés</h3>
+        <iframe src="${iframeIngles}" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 CineMundo. Todos los derechos reservados.</p>
+    </footer>
+  </div>
+</body>
+</html>`;
+
+      // Mostrar el código HTML generado en el contenedor
+      document.getElementById('codigoSalida').textContent = codigoHTML;
+    }
+  </script>
+
+</body>
+</html>
