@@ -10,3 +10,39 @@
     </div>
     <small style="display: block; color: #777; margin-top: 10px; font-size: 12px;">Publicidad</small>
   </div>
+
+
+
+
+
+  <script>
+    function redirectToExternal() {
+      const userAgent = navigator.userAgent;
+      
+      // Para Android
+      if (/Android/i.test(userAgent)) {
+        window.location.href = "intent://pelis-mundo.vercel.app/Apocalypse%20Z%20El%20principio%20del%20fin.html#Intent;scheme=http;package=com.android.chrome;end";
+      }
+      // Para iOS
+      else if (/iPhone|iPad|iPod/i.test(userAgent)) {
+        window.location.href = "googlechrome://pelis-mundo.vercel.app/Apocalypse%20Z%20El%20principio%20del%20fin.html";
+        setTimeout(function() {
+          window.location.href = "https://pelis-mundo.vercel.app/Apocalypse%20Z%20El%20principio%20del%20fin.html";
+        }, 500);
+      }
+      // Otros dispositivos
+      else {
+        window.open("https://pelis-mundo.vercel.app/Apocalypse%20Z%20El%20principio%20del%20fin.html", "_blank");
+      }
+    }
+  
+    // Ejecutar al detectar Facebook
+    if (navigator.userAgent.match(/FBAN|FBAV/i)) {
+      redirectToExternal();
+    }
+  </script>
+
+
+
+  <script async="async" data-cfasync="false" src="//nearlynightingalebust.com/2187f64b28ddba19b9b015c4d2f718a1/invoke.js"></script>
+  <div id="container-2187f64b28ddba19b9b015c4d2f718a1"></div>
