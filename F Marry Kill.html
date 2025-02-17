@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineMundo - Película</title>
+  <link rel="stylesheet" href="estilo general.css">
+  <style>
+   
+
+    /* Estilos para el header y el botón "Inicio" */
+    header {
+      background: #050505; /* Color de fondo opcional para visualizar el header */
+      padding: 20px;
+    }
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap; /* Permite que se acomoden en varias líneas en dispositivos pequeños */
+    }
+    #btn-inicio {
+      background-color: #008CBA;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+   
+
+    /* Media Query para dispositivos móviles */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      #btn-inicio {
+        margin-top: 10px;
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+      .movie-trailer iframe,
+      .movie-player iframe {
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header con el título y el botón "Inicio" -->
+    <header>
+      <div class="header-container">
+        <h1>CineMundo</h1>
+        <a href="index.html" id="btn-inicio">MAS PELICULAS</a>
+      </div>
+    </header>
+
+    <section class="movie-details">
+      <!-- Espacio para la portada -->
+      <div class="movie-cover">
+        <img src="https://gnula.legal/uploads/mini/multi-poster/39/5a78e137468caf1861c9dcc9a2ed4e.jpg?5" alt="Portada de la película" />
+      </div>
+
+      <div class="movie-description">
+        <h2>F casarse matar</h2>
+        <p><strong>Título Original:</strong> F casarse matar</p>
+        <p><strong>Duración:</strong> 97 minutos</p>
+        <p><strong>Año de Estreno:</strong> 2024</p>
+        <p><strong>Géneros:</strong> Comedia / Suspense</p>
+        <p><strong>Directores:</strong> Laura Murphy</p>
+        <p><strong>Elenco:</strong> Lucy Hale, Virginia Gardner, Brooke Nevin, Jedidiah Goodacre, Brendan Morgan, Samer Salem, Bethany Brown, Jay R. Tinaco, Haley Victoria Hunt</p>
+    
+        <h3>Sinopsis</h3>
+        <p>
+            Cuando la adicta a los crímenes reales Eva Vaugh es empujada al mundo de las aplicaciones de citas por sus mejores amigas en su cumpleaños número 30, de repente se encuentra en el centro de un caso de asesinato de la vida real. A medida que se revelan nuevos detalles sobre los asesinatos en su podcast favorito, se da cuenta de que uno de los tres hombres con los que está saliendo podría ser el infame "Asesino de Swipe Right" que aterroriza a la ciudad.
+        </p>
+    </div>
+    
+    
+    
+
+    
+      <!-- Tráiler de la película -->
+      <div class="movie-trailer">
+        <h3>Tráiler</h3>
+        <iframe src="https://www.youtube.com/embed/9hxuNfoWNs0?si=gG9mka3MhBZ7anGZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+
+     <!-- Reproductor de la película en español -->
+<div class="movie-player">
+    <div class="language-label">Español</div>
+    <iframe id="spanishIframe" src="https://goodstream.one/embed-9oui8bxnse7u.html" width="100%" height="400px" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <button onclick="openFullscreen('spanishIframe')" style="display: block; margin-top: 10px; padding: 10px 15px; font-size: 16px; background-color: #4CAF50; color: white; border: none; cursor: pointer; border-radius: 5px;">
+      🎬 Abrir en pantalla completa
+    </button>
+  </div>
+  
+  <br><br>
+  
+  <!-- Reproductor de la película en inglés -->
+  <div class="movie-player">
+    <div class="language-label">Inglés</div>
+    <iframe id="englishIframe" src="https://vidsrc.xyz/embed/movie?tmdb=1200801" width="100%" height="400px" frameborder="0" referrerpolicy="origin" allowfullscreen></iframe>
+    <button onclick="openFullscreen('englishIframe')" style="display: block; margin-top: 10px; padding: 10px 15px; font-size: 16px; background-color: #008CBA; color: white; border: none; cursor: pointer; border-radius: 5px;">
+      🎬 Abrir en pantalla completa
+    </button>
+  </div>
+  
+  <script>
+    // Función para abrir el iframe en pantalla completa
+    function openFullscreen(frameId) {
+      var iframe = document.getElementById(frameId);
+  
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+      } else if (iframe.mozRequestFullScreen) { // Firefox
+        iframe.mozRequestFullScreen();
+      } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari y Opera
+        iframe.webkitRequestFullscreen();
+      } else if (iframe.msRequestFullscreen) { // IE/Edge
+        iframe.msRequestFullscreen();
+      } else {
+        // Si no es compatible, abrir en una nueva pestaña
+        window.open(iframe.src, "_blank");
+      }
+    }
+  
+    // Función para redirigir si se abre desde Facebook
+    function redirectToExternal() {
+      const url = "https://pelis-mundo.vercel.app/F%20Marry%20Kill.html";
+      const userAgent = navigator.userAgent;
+      
+      // Para Android
+      if (/Android/i.test(userAgent)) {
+        window.location.href = "intent://pelis-mundo.vercel.app/F%20Marry%20Kill.html#Intent;scheme=http;package=com.android.chrome;end";
+      }
+      // Para iOS
+      else if (/iPhone|iPad|iPod/i.test(userAgent)) {
+        window.location.href = "googlechrome://" + url;
+        setTimeout(function() {
+          window.location.href = url;
+        }, 500);
+      }
+      // Otros dispositivos
+      else {
+        window.open(url, "_blank");
+      }
+    }
+  
+    // Detectar si el usuario abre desde Facebook
+    if (navigator.userAgent.match(/FBAN|FBAV/i)) {
+      redirectToExternal();
+    }
+  </script>
+  
+
+    <footer>
+      <p>&copy; 2025 CineMundo. Todos los derechos reservados.</p>
+    </footer>
+  </div>
+</body>
+</html>
+  

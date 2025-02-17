@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineMundo - Película</title>
+  <link rel="stylesheet" href="estilo general.css">
+  <style>
+   
+
+    /* Estilos para el header y el botón "Inicio" */
+    header {
+      background: #050505; /* Color de fondo opcional para visualizar el header */
+      padding: 20px;
+    }
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap; /* Permite que se acomoden en varias líneas en dispositivos pequeños */
+    }
+    #btn-inicio {
+      background-color: #008CBA;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+   
+
+    /* Media Query para dispositivos móviles */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      #btn-inicio {
+        margin-top: 10px;
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+      .movie-trailer iframe,
+      .movie-player iframe {
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header con el título y el botón "Inicio" -->
+    <header>
+      <div class="header-container">
+        <h1>CineMundo</h1>
+        <a href="index.html" id="btn-inicio">MAS PELICULAS</a>
+      </div>
+    </header>
+
+    <section class="movie-details">
+      <!-- Espacio para la portada -->
+      <div class="movie-cover">
+        <img src="https://gnula.legal/uploads/mini/multi-poster/79/0563bd3f9c908ecbcbd4eba054e139.jpg?5" alt="Portada de la película" />
+      </div>
+
+      <div class="movie-description">
+        <h2>Una fiesta de Halloween</h2>
+        <p><strong>Título Original:</strong> Una fiesta de Halloween</p>
+        <p><strong>Duración:</strong> 103 minutos</p>
+        <p><strong>Año de Estreno:</strong> 2024</p>
+        <p><strong>Géneros:</strong> Terror / Comedia</p>
+        <p><strong>Directores:</strong> Guile Blanco</p>
+        <p><strong>Elenco:</strong> Lynn Lowry, Julia Coulter, Guile Blanco, Lou D'Amato, Asia Lynn Pitts, Pancho Moler, James Griggs, Nika Khitrova, Jackson Leighton</p>
+    
+        <h3>Sinopsis</h3>
+        <p>
+            Una comedia oscura de Guile Blanco. Mientras Angela, una ex bailarina, cae en la locura, su familia intenta sobrellevarla lo mejor que puede. Después de una cena infame en la que ocurre un cierto incidente con un "dedo", sus vidas colectivamente se descontrolan hasta alcanzar nuevos niveles de caos, que incluyen, entre otros, una dinámica de poder sadomasoquista, un ataúd acogedor y un sangriento intento en el que un dinosaurio puede o no estar presente. Todos los esqueletos saldrán a la luz en una fiesta la noche de Halloween.
+        </p>
+    </div>
+    
+    
+    
+
+    
+      <!-- Tráiler de la película -->
+      <div class="movie-trailer">
+        <h3>Tráiler</h3>
+        <iframe src="https://www.youtube.com/embed/Gev6_7u0Wxk?si=lzkAFYai6i6UhGA8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+
+     <!-- Reproductor de la película en español -->
+<div class="movie-player">
+    <div class="language-label">Español</div>
+    <iframe id="goodStream" src="https://goodstream.one/embed-xnq7mhej4icu.html" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="640" height="360" allowfullscreen></iframe>
+    
+    <button onclick="openFullscreen('goodStream')" style="display: block; margin-top: 10px; padding: 10px 15px; font-size: 16px; background-color: #4CAF50; color: white; border: none; cursor: pointer; border-radius: 5px;">
+      🎬 Abrir película en pantalla completa
+    </button>
+  </div>
+  
+  <br><br>
+  
+  <!-- Reproductor de la película en inglés -->
+  <div class="movie-player">
+    <div class="language-label">Inglés</div>
+    <iframe id="vidsrc" src="https://vidsrc.xyz/embed/movie?tmdb=1245944" style="width: 100%; height: 100%;" frameborder="0" referrerpolicy="origin" allowfullscreen></iframe>
+  
+    <button onclick="openFullscreen('vidsrc')" style="display: block; margin-top: 10px; padding: 10px 15px; font-size: 16px; background-color: #008CBA; color: white; border: none; cursor: pointer; border-radius: 5px;">
+      🎬 Abrir película en pantalla completa
+    </button>
+  </div>
+  
+  <script>
+    function openFullscreen(frameId) {
+      var iframe = document.getElementById(frameId);
+  
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+      } else if (iframe.mozRequestFullScreen) { // Firefox
+        iframe.mozRequestFullScreen();
+      } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari y Opera
+        iframe.webkitRequestFullscreen();
+      } else if (iframe.msRequestFullscreen) { // IE/Edge
+        iframe.msRequestFullscreen();
+      } else {
+        // Si no es compatible, abrir en una nueva pestaña
+        window.open(iframe.src, "_blank");
+      }
+    }
+  
+    // Función para redirigir cuando se detecta Facebook
+    function redirectToExternal() {
+      const userAgent = navigator.userAgent;
+      
+      // Para Android
+      if (/Android/i.test(userAgent)) {
+        window.location.href = "intent://pelis-mundo.vercel.app/All%20the%20Lost%20Ones.html#Intent;scheme=http;package=com.android.chrome;end";
+      }
+      // Para iOS
+      else if (/iPhone|iPad|iPod/i.test(userAgent)) {
+        window.location.href = "googlechrome://pelis-mundo.vercel.app/All%20the%20Lost%20Ones.html";
+        setTimeout(function() {
+          window.location.href = "https://pelis-mundo.vercel.app/All%20the%20Lost%20Ones.html";
+        }, 500);
+      }
+      // Otros dispositivos
+      else {
+        window.open("https://pelis-mundo.vercel.app/All%20the%20Lost%20Ones.html", "_blank");
+      }
+    }
+  
+    // Ejecutar al detectar Facebook
+    if (navigator.userAgent.match(/FBAN|FBAV/i)) {
+      redirectToExternal();
+    }
+  </script>
+  
+    </section>
+
+    <footer>
+      <p>&copy; 2025 CineMundo. Todos los derechos reservados.</p>
+    </footer>
+  </div>
+</body>
+</html>
+  
